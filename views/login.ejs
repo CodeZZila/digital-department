@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/mainStyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Digital Department</title>
+</head>
+<body>
+    <div class="wrapper">
+        <%- include('header') %>
+        <main>
+            <section class='login'>
+                <div class="login-block">
+                    <h4>Авторизуйтесь</h4>
+                    <div class="form-floating mb-3 mt-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Логін</label>
+                      </div>
+                      <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Пароль</label>
+                      </div>
+                      <button class="button mt-3">
+                          Увійти
+                      </button>
+                </div>
+            </section>
+        </main>
+        <%- include('footer') %>
+    </div>
+</body>
+<style>
+    main{
+        height: 80vh;
+    }
+    .login{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-floating{
+        width: 100%;
+    }
+    .login-block{
+        width: 35vw;
+        height: max-content;
+        padding: 2%;
+        border: 1px solid rgb(206, 206, 206);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<script>
+    document.getElementById('login').style.display = 'none'
+</script>
+</html>
