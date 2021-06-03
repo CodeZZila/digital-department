@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <%- include('header') %>
+        <%- include('views-blocks/header') %>
         <main>
             <section class='login'>
                 <div class="login-block">
@@ -23,13 +23,15 @@
                         <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
                         <label for="floatingPassword">Пароль</label>
                       </div>
-                      <button class="button mt-3">
-                          Увійти
-                      </button>
+                      <div class="button btn-log mt-3">
+                          <a href="">
+                              Увійти
+                          </a>
+                      </div>
                 </div>
             </section>
         </main>
-        <%- include('footer') %>
+        <%- include('views-blocks/footer') %>
     </div>
 </body>
 <style>
@@ -55,6 +57,16 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+    .btn-log{
+        display: flex;
+        justify-content: center;
+    }
+    .button>a{
+        color: white;
+    }
+    .button>a:hover{
+
     }
 </style>
 <script>

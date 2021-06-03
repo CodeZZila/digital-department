@@ -1,0 +1,90 @@
+$background: #e8e9ea;
+$color: #737576;
+$background-hover: #d6d9e2;
+$color-hover: #414141;
+
+.page{
+    display: flex;
+    min-height: 100%;
+    height: 100%;
+}
+.left-menu{
+    background-color: $background;
+    color: $color;
+    width: max-content;
+    position: fixed;
+    width: 19em;
+    height: 100vh;
+    ul{
+        padding: 0em;
+        width: 100%;
+        li{
+            width: 100%;
+            padding: 1em 2em;
+            cursor: pointer;
+            list-style: none;
+        }
+        li:hover {
+            background: $background-hover;
+            color: $color-hover;
+        }
+    }
+    .active{
+        background: $background-hover;
+        color: $color-hover;
+        font-weight: 600;
+    }
+    .left-menu-logo{
+        background-color: rgb(23, 23, 32);
+        padding: 1em 2em;
+        a{
+            color: #fff;
+            &:hover{
+                color: rgb(213, 213, 213);
+            }
+        }
+    }
+}
+.right-page{
+    padding-left: 19em;
+    width: 98vw;
+    .page-right-block{
+        display: none;
+    }
+    .openblock{
+        display: block !important;
+    }
+}
+.admin-cont{
+    margin: 1em;
+    width: 100%;
+    .admin-disciplines{
+    }
+    .admin-table, table{
+        width: 100%;
+    }
+    tbody>tr{
+        content: '';
+        border-block-end: 1px solid #eee;
+        margin-block-end: 1em;
+    }
+    .edit_btn{
+        color: #05604f;
+        transition: .3s ease;
+        border: 1px solid #05604f;
+        padding: .2em .4em;
+        border-radius: .1em;
+        -webkit-border-radius: .1em;
+        -moz-border-radius: .1em;
+        -ms-border-radius: .1em;
+        -o-border-radius: .1em;
+        -webkit-transition: .3s ease;
+        -moz-transition: .3s ease;
+        -ms-transition: .3s ease;
+        -o-transition: .3s ease;
+
+        &:hover{
+            background-color: #5cac9d84;
+        }
+    }
+}
