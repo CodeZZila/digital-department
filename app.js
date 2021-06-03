@@ -4,17 +4,19 @@ const app = express();
 
 const PORT = 8888;
 
+// config mongodb
+require('./config/config-mongo');
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-const mainRouter = require('./routes/mainRouter.js');
-const loginRouter = require('./routes/loginRouter');
+const mainRouter = require('./routes/mainRouter');
 const adminRouter = require('./routes/adminRouter');
 
+
 app.use('/', mainRouter);
-app.use('/login', loginRouter);
-app.use('/admin', adminRouter );
+app.use('/admin', adminRouter);
 
 
 app.use(function (req, res, next) {
