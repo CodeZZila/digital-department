@@ -5,4 +5,6 @@ const schema = new Schema({
     abbreviation: {type: String, required: true},
 });
 
+
+
 module.exports = model("Subject", schema);
