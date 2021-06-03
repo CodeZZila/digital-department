@@ -1,0 +1,91 @@
+.page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100%;
+  height: 100%;
+}
+
+.left-menu {
+  background-color: #e8e9ea;
+  color: #737576;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  position: fixed;
+  width: 19em;
+  height: 100vh;
+}
+.left-menu ul {
+  padding: 0em;
+  width: 100%;
+}
+.left-menu ul li {
+  width: 100%;
+  padding: 1em 2em;
+  cursor: pointer;
+  list-style: none;
+}
+.left-menu ul li:hover {
+  background: #d6d9e2;
+  color: #414141;
+}
+.left-menu .active {
+  background: #d6d9e2;
+  color: #414141;
+  font-weight: 600;
+}
+.left-menu .left-menu-logo {
+  background-color: #171720;
+  padding: 1em 2em;
+}
+.left-menu .left-menu-logo a {
+  color: #fff;
+}
+.left-menu .left-menu-logo a:hover {
+  color: #d5d5d5;
+}
+
+.right-page {
+  padding-left: 19em;
+  width: 98vw;
+}
+.right-page .page-right-block {
+  display: none;
+}
+.right-page .openblock {
+  display: block !important;
+}
+
+.admin-cont {
+  margin: 1em;
+  width: 100%;
+}
+.admin-cont .admin-table, .admin-cont table {
+  width: 100%;
+}
+.admin-cont tbody > tr {
+  content: "";
+  -webkit-border-after: 1px solid #eee;
+          border-block-end: 1px solid #eee;
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+}
+.admin-cont .edit_btn {
+  color: #05604f;
+  transition: 0.3s ease;
+  border: 1px solid #05604f;
+  padding: 0.2em 0.4em;
+  border-radius: 0.1em;
+  -webkit-border-radius: 0.1em;
+  -moz-border-radius: 0.1em;
+  -ms-border-radius: 0.1em;
+  -o-border-radius: 0.1em;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+}
+.admin-cont .edit_btn:hover {
+  background-color: #5cac9d84;
+}

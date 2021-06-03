@@ -1,0 +1,30 @@
+
+                
+        <ul>
+            <div href="#" class="logo-text left-menu-logo">
+               <a href="">Digital Department</a> 
+            </div>
+            <li  id="dep_settings">Налаштування кафедри</li>
+            <li class="active" id="disciplines">Дисципліни</li>
+            <li id="groups">Групи</li>
+            <li id="teachers">Викладачі</li>
+            <li id="connections">Зв'язки</li>
+            <li id="watch_schedule">Переглянути розклад</li>
+            <li id="edit_schedule">Редагування розкладу</li>
+            <li id="exit">Вийти</li>
+        </ul>
+
+
+        <script>
+            document.querySelectorAll('li').forEach(e=>{
+                e.addEventListener('click', function(){
+                    document.querySelector('.active').classList.remove('active');
+                    e.classList.add('active');
+                    document.querySelector('.openblock').classList.remove('openblock');
+                    let rightPageClassName = '.admin-' +e.id;
+                    console.log(rightPageClassName)
+                    document.querySelector(rightPageClassName).classList.add('openblock');
+
+                })
+            })
+        </script>
