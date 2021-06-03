@@ -18,10 +18,12 @@ app.set('view engine', 'ejs');
 
 
 
-const mainRouter = require('./routes/mainRouter.js');
+const mainRouter = require('./routes/mainRouter');
+const adminRouter = require('./routes/adminRouter');
 
 
 app.use('/', mainRouter);
+app.use('/admin', adminRouter);
 
 
 app.use(function (req, res, next) {
