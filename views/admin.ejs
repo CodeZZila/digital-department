@@ -10,10 +10,12 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
   
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="../script/admin.js"></script>
+    <script src="../script/modals.js"></script>
+
     <title>Digital Department</title>
 </head>
 <body>
@@ -49,63 +51,4 @@
 
     </div>
 </body>
-<script>
-    
-    $(document).ready( function () {
-    $('#disc_table').DataTable({
-        paging: true,
-        searching: true
-    });
-} );
-
-$(document).ready( function () {
-    $('#groups_table').DataTable({
-        paging: true,
-        searching: true
-    });
-} );
-
-$(document).ready( function () {
-    $('#teachers_table').DataTable({
-        paging: true,
-        searching: true
-    });
-} );
-
-
-
-$(document).ready( function () {
-    $('#connections_table').DataTable({
-        paging: true,
-        searching: true
-    });
-} );
-
-
-// Get the modal
-let modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-let btn1 = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-let spans = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-btn1.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-spans.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
 </html>

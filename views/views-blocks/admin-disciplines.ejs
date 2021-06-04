@@ -2,7 +2,7 @@
     <div class="admin-disciplines admin-cont">
         <div class="admin-header">
             <h2>Налаштування дисциплін</h2>
-            <button id="myBtn">ЭТО ЕБУЧАЯ КНОПКА ЕЩЕ В РАЗРАБОТКЕЕЕЕ</button>
+            <button id="discipline_btn" class="plus_btn"><svg xmlns="http://www.w3.org/2000/svg" fill="white" width="20" height="20" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg></button>
         </div>
         <hr>
         <div class="admin-body">
@@ -36,11 +36,20 @@
     </div>
 
     
-<div id="myModal" class="modal">
+<div id="discipline_modal" class="modal">
 
     <div class="modal-content">
       <span class="close">&times;</span>
-      <p>Some text in the Modal..</p>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Назва дисципліни</label>
+        <input name="fullname" type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Аббревіатура</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+      <button name="abbreviation" class="blue_btn">Зберегти</button>
+
     </div>
   
   </div>
