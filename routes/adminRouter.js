@@ -1,8 +1,11 @@
 const express = require('express');
-const adminController = require('../controllers/adminController');
+const adminRestController = require('../controllers/adminRestController');
 
 const adminRouter = express.Router();
 
-adminRouter.get('/', adminController.getAll )
+adminRouter.get('/', adminRestController.getAll );
+adminRouter.post('/addSubject', adminRestController.addSubject);
+adminRouter.delete('/deleteSubject/:id', adminRestController.deleteSubject)
+
 
 module.exports=adminRouter;

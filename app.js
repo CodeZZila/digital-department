@@ -18,7 +18,6 @@ const adminRouter = require('./routes/adminRouter');
 app.use('/', mainRouter);
 app.use('/admin', adminRouter);
 
-
 app.use(function (req, res, next) {
     res.status(404).render('404');
 });
