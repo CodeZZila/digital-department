@@ -5,7 +5,7 @@ const adminRouter = express.Router();
 
 adminRouter.get('/', adminRestController.getAll );
 adminRouter.post('/addSubject', adminRestController.addSubject);
-adminRouter.delete('/deleteSubject/:id', adminRestController.deleteSubject)
+adminRouter.delete('/deleteSubject/:id', adminRestController.deleteSubject);
 
 
 module.exports=adminRouter;

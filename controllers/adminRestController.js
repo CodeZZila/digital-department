@@ -4,8 +4,16 @@ const teacherController = require('../controllers/teacherController');
 const relationController = require('../controllers/relationController');
 
 
-exports.getAll = function (req, res) {
-   res.render('admin');
+exports.getAll =  function (req, res) {
+    groupController.findAll().then(groups => {
+        subjectController.findAll().then(subjects=>{
+            teacherController.findAll().then(teachers=>{
+                relationController.findAll().then(relations=>{
+                    res.render('admin')
+                })
+            })
+        })
+    })
 }
 
 exports.addSubject = function(req,res){
