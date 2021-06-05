@@ -2,6 +2,8 @@
     <div class="admin-teachers admin-cont">
         <div class="admin-header">
             <h2>Налаштування викладачів</h2>
+            <button id="teachers_btn" class="plus_btn"><svg xmlns="http://www.w3.org/2000/svg" fill="white" width="20" height="20" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg></button>
+
         </div>
         <hr>
         <div class="admin-body">
@@ -33,3 +35,22 @@
             </table>
         </div>
     </div>
+
+      
+<div id="teachers_modal" class="modal">
+
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="mb-3">
+        <label for="nameTeacher" class="form-label">Ім'я</label>
+        <input name="nameTeacher" type="text" class="form-control" id="nameTeacher" placeholder="">
+      </div>
+      <div class="mb-3">
+        <label  for="surnameTeacher" class="form-label">Призвіще</label>
+        <input name="surnameTeacher" type="text" class="form-control" id="surnameTeacher" placeholder="">
+      </div>
+      <button class="blue_btn">Зберегти</button>
+
+    </div>
+  
+  </div>
