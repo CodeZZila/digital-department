@@ -9,6 +9,8 @@ const adminRouter = express.Router();
 adminRouter.get('/', adminRestController.getAll );
 adminRouter.post('/addSubject',urlencodedParser, adminRestController.addSubject);
 adminRouter.delete('/:id',urlencodedParser, adminRestController.deleteSubject);
+adminRouter.post('/addGroup',urlencodedParser, adminRestController.addGroup);
+
 
 
 module.exports=adminRouter;
