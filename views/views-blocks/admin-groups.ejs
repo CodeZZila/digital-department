@@ -2,6 +2,8 @@
     <div class="admin-groups admin-cont">
         <div class="admin-header">
             <h2>Налаштування груп</h2>
+            <button id="groups_btn" class="plus_btn"><svg xmlns="http://www.w3.org/2000/svg" fill="white" width="20" height="20" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg></button>
+
         </div>
         <hr>
         <div class="admin-body">
@@ -33,3 +35,23 @@
             </table>
         </div>
     </div>
+
+    
+    
+<div id="groups_modal" class="modal">
+
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="mb-3">
+        <label for="nameGroup" class="form-label">Номер групи</label>
+        <input name="nameGroup" type="number" class="form-control" id="nameGroup" placeholder="">
+      </div>
+      <div class="mb-3">
+        <label  for="students" class="form-label">Число курсантів</label>
+        <input name="students" type="number" class="form-control" id="students" placeholder="">
+      </div>
+      <button class="blue_btn">Зберегти</button>
+
+    </div>
+  
+  </div>
