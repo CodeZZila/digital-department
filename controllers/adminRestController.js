@@ -9,21 +9,23 @@ exports.getAll =  function (req, res) {
         subjectController.findAll().then(subjects=>{
             teacherController.findAll().then(teachers=>{
                 relationController.findAll().then(relations=>{
-                    res.render('admin')
+                    res.render('admin',{
+                        subjects:subjects
+                    })
                 })
             })
         })
     })
 }
 
-exports.addSubject = function(req,res){
+exports.addSubject = async function(req,res){
     console.log(req.body)
     res.send (subjectController.create(req.body));
 }
 
-exports.deleteSubject = function(req,res){
+exports.deleteSubject = async function(req,res){
     console.log(req.params.id)
-    res.send (subjectController.deleteById(req.params.id));
+    res.send(subjectController.deleteById(req.params.id));
 }
 
 exports.addGroup = function (req, res) {
