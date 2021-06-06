@@ -4,7 +4,7 @@ const schema = new Schema({
     username: {type: String, required: true},
     password: {type: String, required: true},
     role: {type: String, required: true},
-    idTeacher:{type: Types.ObjectId, required: true, ref:'Teacher'}
+    email: {type: String, required: true}
 });
 
-module.exports = model("Teacher", schema);
+module.exports = model("User", schema);
