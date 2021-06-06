@@ -25,3 +25,7 @@ exports.findAll = async function () {
 exports.findById = async function (id) {
     return Teacher.findById(id);
 };
+
+exports.findByIdUser = async function (idUser) {
+    return Teacher.find({userId: idUser});
+};

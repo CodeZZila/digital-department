@@ -5,9 +5,14 @@ const studentController = require('./modelControllers/studentController');
 const relationController = require('./modelControllers/relationController');
 const userController = require('./modelControllers/userController');
 
-const mongoose = require("mongoose");
+const jwt = require('jsonwebtoken');
+const {secret} = require('../config/config-jwt');
+const sec = require('../controllers/authController');
+
 
 exports.getStartView = async function (req,res){
+    let idUser = jwt.verify(sec.tok, secret).id;
+    
     let teacher = await teacherController.findById("60b9c97afea6841b94c2cbae");
 
     let relationsFromTeacher = await relationController.findAllByIdTeacher("60b9c97afea6841b94c2cbae");
