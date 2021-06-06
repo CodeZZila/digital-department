@@ -59,6 +59,7 @@ exports.deleteRelation = function(req,res){
 }
 
 exports.addCadets = function (req, res) {
-    console.log("dfsdfsd")
+    console.log("1dfsdfsd")
     console.log(req.file)
+    // res.send('OK');
 }
