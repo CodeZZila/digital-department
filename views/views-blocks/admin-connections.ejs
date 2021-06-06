@@ -1,0 +1,71 @@
+
+    <div class="admin-connections admin-cont">
+        <div class="admin-header">
+            <h2>Налаштування зв'язків</h2>
+            <button id="connections_btn" class="plus_btn"><svg xmlns="http://www.w3.org/2000/svg" fill="white" width="20" height="20" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg></button>
+
+        </div>
+        <hr>
+        <div class="admin-body">
+            <table id="connections_table" class="admin-table">
+                <thead>
+                    <th>#</th>
+                    <th>Дисципліна</th>
+                    <th>Викладач</th>
+                    <th>Група</th>
+                    <th ></th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td>КПП</td>
+                        <td>Власенко</td>
+                        <td>281</td>
+                        <td>
+                            <a href="">
+                                <svg class="table-icon" fill="#f54242" xmlns="http://www.w3.org/2000/svg"  width="24" height="24" viewBox="0 0 24 24"><path d="M9 19c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5-17v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712zm-3 4v16h-14v-16h-2v18h18v-18h-2z"/></svg>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    
+<div id="connections_modal" class="modal">
+
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="mb-3">
+        <label for="idSubject" class="form-label">Назва дисципліни</label>
+        <input class="form-control" list="datalistOptions_idSubject" id="idSubject" placeholder="Нажміть для пошуку...">
+        <datalist id="datalistOptions_idSubject">
+          <option value="КПП">
+          <option value="ООП">
+          <option value="АП">
+        </datalist>
+      </div>
+      <div class="mb-3">
+        <label for="idGroup" class="form-label">Номер групи</label>
+        <input class="form-control" list="datalistOptions_idGroup" id="idGroup" placeholder="Нажміть для пошуку...">
+        <datalist id="datalistOptions_idGroup">
+          <option value="281">
+          <option value="282">
+          <option value="283">
+        </datalist>
+      </div>
+      <div class="mb-5">
+        <label for="idTeacher" class="form-label">Викладач</label>
+        <input class="form-control" list="datalistOptions_idTeacher" id="idTeacher" placeholder="Нажміть для пошуку...">
+        <datalist id="datalistOptions_idTeacher">
+          <option value="Редзюк">
+          <option value="Власенко">
+          <option value="Фесьоха">
+        </datalist>
+      </div>
+      <button class="blue_btn">Зберегти</button>
+
+    </div>
+  
+  </div>

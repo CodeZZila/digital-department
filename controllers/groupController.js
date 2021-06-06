@@ -19,7 +19,7 @@ exports.update = async function (id, object) {
 };
 
 exports.findAll = async function () {
-    return Group.find({});
+    return  Group.find({});
 };
 
 exports.findById = async function (id) {

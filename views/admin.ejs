@@ -6,9 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/mainStyle.css">
     <link rel="stylesheet" href="../style/adminStyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+  
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+   
+
     <title>Digital Department</title>
 </head>
 <body>
@@ -18,20 +24,20 @@
                 <%- include('views-blocks/left-menu.ejs') %>
             </article>
             <div class="right-page">
-                <div class="page-right-block openblock admin-disciplines">
+                <div class="page-right-block  admin-disciplines">
                     <%- include('views-blocks/admin-disciplines') %>
                 </div>
                 <div class="page-right-block admin-groups">
                     <%- include('views-blocks/admin-groups') %>
                 </div>
-                <div class="page-right-block admin-groups">
-                    <%- include('views-blocks/admin-groups') %>
-                </div>
-                <div class="page-right-block admin-dep_settings">
+                <div class="page-right-block openblock admin-dep_settings">
+                    <%- include('views-blocks/admin-dep_settings.ejs') %>
                 </div>
                 <div class="page-right-block admin-teachers">
+                    <%- include('views-blocks/admin-teachers.ejs') %>
                 </div>
                 <div class="page-right-block admin-connections">
+                    <%- include('views-blocks/admin-connections.ejs') %>
                 </div>
                 <div class="page-right-block admin-watch_schedule">
                 </div>
@@ -42,13 +48,8 @@
             </div>
         </div>
         <%- include('views-blocks/footer') %>
+        <script src="../script/admin.js"></script>
+        <script src="../script/modals.js"></script>
     </div>
 </body>
-<script>
-    
-    $(document).ready( function () {
-    $('#myTable').DataTable();
-} );
-
-</script>
 </html>
