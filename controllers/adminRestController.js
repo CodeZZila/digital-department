@@ -10,7 +10,8 @@ exports.getAll =  function (req, res) {
             teacherController.findAll().then(teachers=>{
                 relationController.findAll().then(relations=>{
                     res.render('admin',{
-                        subjects:subjects
+                        subjects:subjects,
+                        groups:groups
                     })
                 })
             })
@@ -29,6 +30,8 @@ exports.deleteSubject = async function(req,res){
 }
 
 exports.addGroup = function (req, res) {
+    console.log(req.body)
+
     res.send (groupController.create(req.body));
 }
 
@@ -53,4 +56,9 @@ exports.addRelation = function (req, res) {
 exports.deleteRelation = function(req,res){
     console.log(req.params.id)
     res.send (relationController.deleteById(req.params.id));
+}
+
+exports.addCadets = function (req, res) {
+    console.log("dfsdfsd")
+    console.log(req.file)
 }
