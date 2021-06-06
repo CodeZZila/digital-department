@@ -25,3 +25,16 @@ exports.findAll = async function () {
 exports.findById = async function (id) {
     return Group.findById(id);
 };
+
+exports.findByName = async function (name) {
+    return Group.find({nameGroup: name});
+};
+
+exports.isExist = async function (nameGroup) {
+    let group = await Group.find({nameGroup: nameGroup});
+    if(group.length > 0){
+        return true;
+    }else {
+        return false;
+    }
+};
