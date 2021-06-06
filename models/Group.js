@@ -3,12 +3,12 @@ const {Schema, model, Types} = require("mongoose");
 const schema = new Schema({
     nameGroup: {type: String, required: true},
     students:[{
-        fullnameStudent: {type: String, required:true},
+        fullNameStudent: {type: String, required: true},
         marks: [{
             mark: {type: String},
             type: {type: String, required: true},
             numberOfLesson: {type: String, required: true},
-            idRelation: {type: Types.ObjectId, required: true, ref:'Relation'}
+            idRelation: {type: Types.ObjectId, ref:'Relation'}
         }]
     }]
 });
