@@ -14,20 +14,20 @@
         <main>
             <section class='login'>
                 <div class="login-block">
-                    <h4>Авторизуйтесь</h4>
-                    <div class="form-floating mb-3 mt-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput">Логін</label>
-                      </div>
-                      <div class="form-floating">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                        <label for="floatingPassword">Пароль</label>
-                      </div>
-                      <div class="button btn-log mt-3">
-                          <a href="">
-                              Увійти
-                          </a>
-                      </div>
+                    <form action="/login" method="post">
+                        <h4>Авторизуйтесь</h4>
+                        <div class="form-floating mb-3 mt-3">
+                            <input name="username" type="text" class="form-control" id="floatingInput" placeholder="username">
+                            <label for="floatingInput">Логін</label>
+                        </div>
+                        <div class="form-floating">
+                            <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Пароль</label>
+                        </div>
+                        <div class="button btn-log mt-3">
+                            <input type="submit" value="Увійти">
+                        </div>
+                    </form>
                 </div>
             </section>
         </main>
