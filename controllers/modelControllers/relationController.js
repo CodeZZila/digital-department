@@ -1,4 +1,4 @@
-const Relation = require('../models/Relation');
+const Relation = require('../../models/Relation');
 
 function exception (err) {
     if (err) return "error 400";

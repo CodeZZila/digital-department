@@ -1,7 +1,7 @@
-const subjectController = require('../controllers/subjectController');
-const groupController = require('../controllers/groupController');
-const teacherController = require('../controllers/teacherController');
-const relationController = require('../controllers/relationController');
+const subjectController = require('./modelControllers/subjectController');
+const groupController = require('./modelControllers/groupController');
+const teacherController = require('./modelControllers/teacherController');
+const relationController = require('./modelControllers/relationController');
 
 
 exports.getAll =  function (req, res) {

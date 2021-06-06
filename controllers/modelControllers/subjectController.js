@@ -1,4 +1,4 @@
-const Subject = require('../models/Subject');
+const Subject = require('../../models/Subject');
 
 function exception (err) {
     if (err) return "error 400";

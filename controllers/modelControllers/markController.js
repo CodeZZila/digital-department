@@ -1,4 +1,4 @@
-const Group = require('../models/Group');
+const Mark = require('../../models/Subject');
 
 function exception (err) {
     if (err) return "error 400";
@@ -6,22 +6,22 @@ function exception (err) {
 }
 
 exports.create = async function (object) {
-    let group = new Group(object);
-    await group.save(exception);
+    let mark = new Mark(object);
+    await mark.save(exception);
 };
 
 exports.deleteById = async function (id) {
-    await Group.findByIdAndDelete(id, exception);
+    await Mark.findByIdAndDelete(id, exception);
 };
 
 exports.update = async function (id, object) {
-    await Group.findByIdAndUpdate(id, object ,exception);
+    await Mark.findByIdAndUpdate(id, object ,exception);
 };
 
 exports.findAll = async function () {
-    return  Group.find({});
+    return Mark.find({});
 };
 
 exports.findById = async function (id) {
-    return Group.findById(id);
+    return Mark.findById(id);
 };

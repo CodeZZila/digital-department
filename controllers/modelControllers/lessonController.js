@@ -1,4 +1,4 @@
-const Lesson = require('../models/Lesson');
+const Lesson = require('../../models/Lesson');
 
 function exception (err) {
     if (err) return "error 400";

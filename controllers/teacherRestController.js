@@ -1,7 +1,7 @@
-const teacherController = require('../controllers/teacherController');
-const subjectController = require('../controllers/subjectController');
-const groupController = require('../controllers/groupController');
-const relationController = require('../controllers/relationController');
+const teacherController = require('./modelControllers/teacherController');
+const subjectController = require('./modelControllers/subjectController');
+const groupController = require('./modelControllers/groupController');
+const relationController = require('./modelControllers/relationController');
 
 const mongoose = require("mongoose");
 

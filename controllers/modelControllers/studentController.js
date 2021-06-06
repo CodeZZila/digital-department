@@ -1,4 +1,4 @@
-const User = require('../models/User');
+const Student = require('../../models/Subject');
 
 function exception (err) {
     if (err) return "error 400";
@@ -6,22 +6,22 @@ function exception (err) {
 }
 
 exports.create = async function (object) {
-    let subject = new User(object);
-    await subject.save(exception);
+    let student = new Student(object);
+    await student.save(exception);
 };
 
 exports.deleteById = async function (id) {
-    await User.findByIdAndDelete(id, exception);
+    await Student.findByIdAndDelete(id, exception);
 };
 
 exports.update = async function (id, object) {
-    await User.findByIdAndUpdate(id, object ,exception);
+    await Student.findByIdAndUpdate(id, object ,exception);
 };
 
 exports.findAll = async function () {
-    return User.find({});
+    return Student.find({});
 };
 
 exports.findById = async function (id) {
-    return User.findById(id);
+    return Student.findById(id);
 };
