@@ -2,7 +2,9 @@ const subjectController = require('./modelControllers/subjectController');
 const groupController = require('./modelControllers/groupController');
 const teacherController = require('./modelControllers/teacherController');
 const relationController = require('./modelControllers/relationController');
+const studentController = require('./modelControllers/studentController');
 
+const fs = require('fs')
 
 exports.getAll =  function (req, res) {
     groupController.findAll().then(groups => {
@@ -41,6 +43,7 @@ exports.deleteGroup = function(req,res){
 }
 
 exports.addTeacher = function (req, res) {
+
     res.send (teacherController.create(req.body));
 }
 
@@ -58,8 +61,30 @@ exports.deleteRelation = function(req,res){
     res.send (relationController.deleteById(req.params.id));
 }
 
-exports.addCadets = function (req, res) {
-    console.log("1dfsdfsd")
-    console.log(req.file)
+exports.addCadets = async function (req, res) {
+    let nameGroup = req.file.originalname.split('.')[0]
+    if(!(await groupController.isExist(nameGroup))){
+        await groupController.create({
+            nameGroup: nameGroup
+        })
+    }
+    fs.readFile('./uploads/'+req.file.originalname, "utf8", async function (error, data) {
+        if (error) throw error;
+
+        let group = await groupController.findByName(nameGroup)
+
+        for await (let item of data.toString().split("\n")) {
+            await studentController.create({
+                fullNameStudent: item,
+                idGroup: group[0]._id
+            })
+        }
+    });
+    fs.unlink('./uploads/'+req.file.originalname,function(err){
+        if(err) return console.log(err);
+        console.log('file deleted successfully');
+    });
     // res.send('OK');
 }
+
+
