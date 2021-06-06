@@ -6,8 +6,8 @@ function exception (err) {
 }
 
 exports.create = async function (object) {
-    let subject = new Teacher(object);
-    await subject.save(exception);
+    let teacher = new Teacher(object);
+    await teacher.save(exception);
 };
 
 exports.deleteById = async function (id) {
