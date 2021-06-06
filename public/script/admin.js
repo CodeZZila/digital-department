@@ -70,7 +70,8 @@ function addCadets() {
     let files = sendFile.files;
     let formData = new FormData();
     let file = files[0];
-    formData.append('fileAjax', file, file.name);
+    console.log(file)
+    formData.append('filedata', file, file.name);
 
     // $.ajax({
     //     url: '/admin/addCadets',
