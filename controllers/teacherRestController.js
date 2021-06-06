@@ -3,6 +3,7 @@ const subjectController = require('./modelControllers/subjectController');
 const groupController = require('./modelControllers/groupController');
 const studentController = require('./modelControllers/studentController');
 const relationController = require('./modelControllers/relationController');
+const userController = require('./modelControllers/userController');
 
 const mongoose = require("mongoose");
 
