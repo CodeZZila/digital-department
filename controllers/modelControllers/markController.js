@@ -1,4 +1,4 @@
-const Mark = require('../../models/Subject');
+const Mark = require('../../models/Mark');
 
 function exception (err) {
     if (err) return "error 400";
