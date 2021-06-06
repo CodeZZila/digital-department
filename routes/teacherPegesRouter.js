@@ -1,9 +1,10 @@
 const express = require('express');
 const teacherRestController = require('../controllers/teacherRestController');
 
-const mainRouter = express.Router();
+const teacherRouter = express.Router();
 
 
-mainRouter.get('/', teacherRestController.getStartView)
+teacherRouter.get('/', teacherRestController.getStartView)
+teacherRouter.get('/groups', teacherRestController.getGroups)
 
-module.exports=mainRouter;
+module.exports=teacherRouter;

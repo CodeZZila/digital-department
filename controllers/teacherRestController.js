@@ -7,24 +7,27 @@ const relationController = require('./modelControllers/relationController');
 const mongoose = require("mongoose");
 
 exports.getStartView = async function (req,res){
-    //let teacher = await teacherController.findById("60b9c97afea6841b94c2cbae");
-    //let subject = await subjectController.findById("60b8f08924646c312c43a57b");
-    //let group = await groupController.findById("60bc8473eeb94439b41553b3");
+    let teacher = await teacherController.findById("60b9c97afea6841b94c2cbae");
 
-    await studentController.create({
-        fullNameStudent: "Арсений Антонов",
-        idGroup: '60bc8473eeb94439b41553b3'
+    let relationsFromTeacher = await relationController.findAllByIdTeacher("60b9c97afea6841b94c2cbae");
+    let subjectFromTeacher = [];
+    for await (let item of relationsFromTeacher){
+        subjectFromTeacher.push(await subjectController.findById(item.idSubject));
+    }
+
+    res.render('teacherPageStart', {
+        teacher: teacher,
+        subjects: subjectFromTeacher
     });
+};
 
-    await studentController.create({
-        fullNameStudent: "Артур Аликокович",
-        idGroup: '60bc8473eeb94439b41553b3'
+exports.getGroups = async function (req,res){
+    let relations = await relationController.findAllByIdSubjectAndIdTeacher(req.query.subjectId, req.query.teacherId);
+    let groupFromTeacherAndSubject = [];
+    for await (let item of relations){
+        groupFromTeacherAndSubject.push(await groupController.findById(item.idGroup));
+    }
+    res.render('teacherPageGroups', {
+        groups: groupFromTeacherAndSubject
     });
-
-    await studentController.create({
-        fullNameStudent: "Арсений Аваков",
-        idGroup: '60bc8473eeb94439b41553b3'
-    });
-
-    res.send("121212");
 };
