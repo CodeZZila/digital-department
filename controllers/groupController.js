@@ -6,8 +6,8 @@ function exception (err) {
 }
 
 exports.create = async function (object) {
-    let subject = new Group(object);
-    await subject.save(exception);
+    let group = new Group(object);
+    await group.save(exception);
 };
 
 exports.deleteById = async function (id) {

@@ -13,10 +13,12 @@ app.set('view engine', 'ejs');
 
 const mainRouter = require('./routes/mainRouter');
 const adminRouter = require('./routes/adminRouter');
+const teacherPegesRouter = require('./routes/teacherPegesRouter');
 
 
 app.use('/', mainRouter);
 app.use('/admin', adminRouter);
+app.use('/teacher', teacherPegesRouter);
 
 
 app.use(function (req, res, next) {
