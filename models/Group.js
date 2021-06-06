@@ -5,7 +5,7 @@ const schema = new Schema({
     students:[{
         fullNameStudent: {type: String, required: true},
         marks: [{
-            mark: {type: String, required: true},
+            mark: {type: String},
             type: {type: String, required: true},
             numberOfLesson: {type: String, required: true},
             idRelation: {type: Types.ObjectId, ref:'Relation'}
