@@ -1,27 +1,27 @@
-const Teacher = require('../models/Teacher');
+const Subject = require('../../models/Subject');
 
 function exception (err) {
     if (err) return "error 400";
-    return `ok`;
+    return "ok";
 }
 
 exports.create = async function (object) {
-    let subject = new Teacher(object);
+    let subject = new Subject(object);
     await subject.save(exception);
 };
 
 exports.deleteById = async function (id) {
-    await Teacher.findByIdAndDelete(id, exception);
+    await Subject.findByIdAndDelete(id, exception);
 };
 
 exports.update = async function (id, object) {
-    await Teacher.findByIdAndUpdate(id, object ,exception);
+    await Subject.findByIdAndUpdate(id, object ,exception);
 };
 
 exports.findAll = async function () {
-    return Teacher.find({});
+    return Subject.find({});
 };
 
 exports.findById = async function (id) {
-    return Teacher.findById(id);
+    return Subject.findById(id);
 };

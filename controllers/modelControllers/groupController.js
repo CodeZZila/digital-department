@@ -1,4 +1,4 @@
-const Group = require('../models/Group');
+const Group = require('../../models/Group');
 
 function exception (err) {
     if (err) return "error 400";
@@ -6,8 +6,8 @@ function exception (err) {
 }
 
 exports.create = async function (object) {
-    let subject = new Group(object);
-    await subject.save(exception);
+    let group = new Group(object);
+    await group.save(exception);
 };
 
 exports.deleteById = async function (id) {
@@ -19,9 +19,22 @@ exports.update = async function (id, object) {
 };
 
 exports.findAll = async function () {
-    return Group.find({});
+    return  Group.find({});
 };
 
 exports.findById = async function (id) {
     return Group.findById(id);
+};
+
+exports.findByName = async function (name) {
+    return Group.find({nameGroup: name});
+};
+
+exports.isExist = async function (nameGroup) {
+    let group = await Group.find({nameGroup: nameGroup});
+    if(group.length > 0){
+        return true;
+    }else {
+        return false;
+    }
 };

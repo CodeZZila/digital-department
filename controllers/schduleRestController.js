@@ -1,3 +1,4 @@
+
 exports.getSchedule = function (req, res) {
     res.render('watchSchedule');
 };

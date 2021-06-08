@@ -4,8 +4,9 @@
             <h2>Налаштування груп</h2>
             <div class="btns" style="display: flex; align-items: center; justify-content: center;">
                 <button id="groups_btn" class="plus_btn" style="margin-right: .5em;"> <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="24" height="24" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg></button>
-                <button id="addStudents_btn" class="blue_btn" style="padding: .5em;">Додати файл</button>
+                <button  onclick="addCadets()" id="addStudents_btn" class="blue_btn" style="padding: .5em;">Додати файл</button>
             </div>
+
         </div>
         <hr>
         <div class="admin-body">
@@ -52,7 +53,7 @@
         <label  for="students" class="form-label">Число курсантів</label>
         <input name="students" type="number" class="form-control" id="students" placeholder="">
       </div>
-      <button class="blue_btn">Зберегти</button>
+      <button onclick="addGroup()" class="blue_btn">Зберегти</button>
 
     </div>
   

@@ -1,4 +1,4 @@
-const Relation = require('../models/Relation');
+const Relation = require('../../models/Relation');
 
 function exception (err) {
     if (err) return "error 400";
@@ -32,4 +32,8 @@ exports.findAllByIdTeacher = async function (idTeacher) {
 
 exports.findAllByIdGroup = async function (idGroup) {
     return Relation.find({idGroup: idGroup});
+};
+
+exports.findAllByIdSubjectAndIdTeacher = async function (idSubject, idTeacher) {
+    return Relation.find({idSubject: idSubject, idTeacher: idTeacher});
 };

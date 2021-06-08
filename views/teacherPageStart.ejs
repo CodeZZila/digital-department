@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1><%=teacher.nameTeacher%> <%=teacher.surnameTeacher%></h1>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Дисципліна</th>
+                <th>Дія</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i = 0; i < subjects.length; i++){ %>
+            <tr>
+                <th><%= i+1 %></th>
+                <th><%= subjects[i].abbreviation %></th>
+                <th><a href="/teacher/groups?subjectId=<%=subjects[i]._id%>&teacherId=<%=teacher._id%>">Перейти</a></th>
+            </tr>
+            <% }%>
+        </tbody>
+    </table>
+</body>
+</html>
