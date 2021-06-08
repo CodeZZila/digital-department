@@ -89,6 +89,7 @@ select {
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  margin-left: 2em;
 }
 .logo-text{
   font-size: 1em;
@@ -130,91 +131,6 @@ main{
 section, header, footer {
     padding: 0 15px;
   }
-
-  @mixin createButton($width, $height, $radius, $gradientFirst, $gradientThird,
-   $shadowColor, $textColor, $font-size)
-  {
-    border-radius: $radius;
-    background-image: linear-gradient( 135deg, $gradientFirst 0%, $gradientThird 100%);
-    box-shadow: 0 .5em .6em -.5em $shadowColor;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    font-size: $font-size;
-    color: $textColor;
-    height: $height;
-    width: $width;
-  }
-  
-
-  .button-color{
-    transition: all .3s ease-in-out;
-    margin: .3em .1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: .1em .3em;
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.2em;
-    &:nth-child(2n+1){
-      @include createButton(30%, 2.5em, .3em,#E2B0FF,#9F44D3, rgba(171,88,219,0.5), #fff, 3.5em);
-    }
-    &:nth-child(3n+1){
-      @include createButton(30%, 2.5em, .3em,#73baec,#0396FF, rgba(30,161,255,0.5), #fff, 3.5em);
-    }
-    &:nth-child(2n){
-      @include createButton(30%, 2.5em, .3em,#81FBB8,#28C76F, rgba(60,211,128,0.5), #fff, 3.5em);
-    }
-    &:nth-child(5n){
-      @include createButton(30%, 2.5em, .3em,#FEB692,#EA5455, rgba(238,103,97,0.5), #fff, 3.5em);
-    }
-    &:hover{
-      transform:translatey(10px);
-      box-shadow: none;
-    }
-    &:active{
-      opacity: 0.5;
-    }
-  }
-  .button{
-    padding: .3em .6em;
-    transition: all .3s ease-in-out;
-    color: #ffffff;
-    margin: .3em;
-    font-weight: 600;
-        @include createButton(10em, 2.2em, .2em,#4889d8,#4889d8, #4889d8b4, #ffffff, 1.4em);
-      
-      &:hover{
-        transform:translatey(1px);
-        box-shadow: none;
-        -webkit-transform:translatey(1px);
-        -moz-transform:translatey(1px);
-        -ms-transform:translatey(1px);
-        -o-transform:translatey(1px);
-      }
-      &:active{
-        opacity: 0.5;
-      }
-  }
-  
-  .button-log{
-    padding: .3em .6em;
-    transition: all .3s ease-in-out;
-        @include createButton(4.5em, 2.5em, 2px,#f5f5f575,#ffffff, rgba(228, 228, 228, 0.285), #4c4c4c, .9em);
-      
-      &:hover{
-        transform:translatey(1px);
-        box-shadow: none;
-        -webkit-transform:translatey(1px);
-        -moz-transform:translatey(1px);
-        -ms-transform:translatey(1px);
-        -o-transform:translatey(1px);
-      }
-      &:active{
-        opacity: 0.5;
-      }
-  }
-  
   @media (min-width: 575.98px){
     section, header, footer {
       padding: 0 calc(50vw - 270px);
@@ -327,3 +243,128 @@ section, header, footer {
       opacity: 80%;
     }
   }
+
+  // buttons
+
+
+  
+
+  @mixin createButton($width, $height, $radius, $gradientFirst, $gradientThird,
+   $shadowColor, $textColor, $font-size)
+  {
+    border-radius: $radius;
+    background-image: linear-gradient( 135deg, $gradientFirst 0%, $gradientThird 100%);
+    box-shadow: 0 .6em .6em -.2em $shadowColor;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: $font-size;
+    color: $textColor;
+    height: $height;
+    width: $width;
+  }
+  
+
+  .button-color{
+    transition: all .3s ease-in-out;
+    margin: .3em .1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .1em .3em;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.2em;
+    &:nth-child(2n+1){
+      @include createButton(30%, 2.5em, .3em,#E2B0FF,#9F44D3, rgba(171,88,219,0.5), #fff, 3.5em);
+    }
+    &:nth-child(3n+1){
+      @include createButton(30%, 2.5em, .3em,#73baec,#0396FF, rgba(30,161,255,0.5), #fff, 3.5em);
+    }
+    &:nth-child(2n){
+      @include createButton(30%, 2.5em, .3em,#81FBB8,#28C76F, rgba(60,211,128,0.5), #fff, 3.5em);
+    }
+    &:nth-child(5n){
+      @include createButton(30%, 2.5em, .3em,#FEB692,#EA5455, rgba(238,103,97,0.5), #fff, 3.5em);
+    }
+    &:hover{
+      transform:translatey(10px);
+      box-shadow: none;
+    }
+    &:active{
+      opacity: 0.5;
+    }
+  }
+  .button{
+    padding: .3em .6em;
+    transition: all .3s ease-in-out;
+    color: #ffffff;
+    margin: .3em;
+        @include createButton(10em, 2.2em, .2em,#4889d8,#4889d8, #4889d8b4, #ffffff, 1.4em);
+      
+      &:hover{
+        transform:translatey(1px);
+        box-shadow: none;
+        -webkit-transform:translatey(1px);
+        -moz-transform:translatey(1px);
+        -ms-transform:translatey(1px);
+        -o-transform:translatey(1px);
+      }
+      &:active{
+        opacity: 0.5;
+      }
+  }
+  
+  .button-log{
+    text-align: center;
+    font-weight: 400;
+    display: flex;
+    padding:0 1em ;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease-in-out;
+        @include createButton(max-content, 2.5em, .5em,#fafafa,#ffffff, rgba(240, 240, 240, 0.381), #444444, .9em);
+      
+      &:hover{
+        transform:translatey(1px);
+        box-shadow: none;
+        -webkit-transform:translatey(1px);
+        -moz-transform:translatey(1px);
+        -ms-transform:translatey(1px);
+        -o-transform:translatey(1px);
+      }
+      &:active{
+        opacity: 0.5;
+      }
+  }
+  
+  .blue-btn{
+
+  }
+  .small-blue-btn{
+    width: 100%;
+    text-align: center;
+    font-weight: 400;
+    display: flex;
+    padding:0 1em ;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: .05em;
+    transition: all .3s ease-in-out;
+    @include createButton(max-content, 2.5em, .2em, #56ace9,#0396FF, rgba(30, 161, 255, 0.252), #fff, 1em);
+  
+  }
+  
+.save-btn{
+  width: 100%;
+  text-align: center;
+  font-weight: 400;
+  display: flex;
+  padding:0 1em ;
+  margin-top: 1em;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: .05em;
+  transition: all .3s ease-in-out;
+  @include createButton(100%, 2.5em, .2em, #56ace9,#0396FF, rgba(30,161,255,0.5), #fff, 1em);
+
+}

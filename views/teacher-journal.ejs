@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/mainStyle.css">
+    <link rel="shortcut icon" href="../img/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/style/journal.css">
+    <title>Digital Department</title>
+</head>
+<body>
+    <div class="wrapper">
+        <%- include('views-blocks/header') %> 
+        <main class="teacher-journal">
+            <section class="journal-header">
+                    <a href="" style="display: flex; align-items: center;"><svg style="margin-right: 1.5em; " width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"/></svg>
+                        Олександр Власенко</a>
+                    <div class="text discipline">OOP - 281</div>
+                    <button id="lesson_btn" class="button small-blue-btn" style="margin-right: .5em;">Додати заняття</button>
+            </section>
+            <section>
+                <div class="journal-body">
+                    <table>
+                        <thead>
+                            <th>#</th>
+                            <th>Призвіще</th>
+                            <th>1.1</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>1</th>
+                                <td>Вірста</td>
+                                <td>10</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+        </main>
+        <%- include('views-blocks/footer') %>
+    </div>
+</body>
+<script>
+document.getElementById('login').style.display = 'none';
+
+</script>
+</html>

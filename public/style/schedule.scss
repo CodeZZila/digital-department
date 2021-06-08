@@ -4,6 +4,7 @@ $silver-color: #dadada;
 $pz: linear-gradient(254.74deg, #5a8b19 0.36%, #89a366 93.63%);
 $gz: linear-gradient(254.74deg, #FF4D00 0.36%, #DEB54D 93.63%);
 $lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
+
 .schedule{
     .gz{background: $gz;
     }
@@ -40,7 +41,7 @@ $lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
     .text-group{
         font-weight: 900;
         font-size: 60px;
-        font-size: 7em;
+        font-size: 10vh;
         line-height: 1em;
         text-align: center;
         color: rgba(255, 255, 255, 0.915);
@@ -52,7 +53,7 @@ $lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
         font-weight: bold;
         font-size: 39px;
         line-height: 1em;
-        font-size: 3.5em;
+        font-size: 5vh;
         font-style: normal;
         text-align: center;
         color: #FFFFFF;
@@ -60,7 +61,7 @@ $lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
     .teacher{
         font-weight: bold;
         font-size: 20px;
-        font-size: 2.5em;
+        font-size: 4vh;
         text-align: center;
         color: #FFFFFF;
     }
@@ -85,7 +86,11 @@ $lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
     align-items: center;
     justify-content: center;
     font-weight: 400;
-    color: rgb(111, 111, 111);
+    color: rgb(152, 152, 152);
+    height: 5vh;
+    padding-bottom: 1em;
+
+    font-weight: 500;
     
 .clock {
     // padding: 1em;
@@ -143,32 +148,43 @@ $lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
   
 }
 .schedule-table{
+    
+    height: 95vh;
     table{
-        height: 95vh;
-        width: 100vw;
+        width: 100%;
+        height: 100%;
     }
     tr{
         text-align: center;
     }
-    .td{
-        height: 100%;
-        min-height: 100%;
+    td{
+        padding: .5em;
+        min-width: 20vw;
+        max-width: 25vw;
+
     }
     form{
+        width: 100%;
         height: 100%;
-        padding-block-start: .5em;
-        padding-block-end: .5em;
-        padding: .5em;
+        margin: .1s;
+        display: flex;
+        justify-content: space-around;
+    }
+    .first{
+        width: 100%;
+    }
+    .second{
+        padding: .1em;
+        width: 100%;
     }
     th{
-        font-size: 2.5em;
-        font-weight: 700;
-        text-align: center;
-        padding: 0 !important;
+        font-size: 3vh;
     }
     thead{
         th{
         }
+    }
+    .form-floating{
     }
     tbody{
         th{
@@ -218,3 +234,45 @@ $lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
         }
     }
 }
+
+
+@media (min-width: 575.98px){
+    
+  }
+  
+  @media (min-width: 767.98px){
+  }
+  
+  @media (min-width: 991.98px) {
+  }
+  @media (min-width: 1199.98px){
+  }
+  @media (min-width: 1499.98px){
+  }
+  @media (min-width: 1899.98px){
+    
+  }
+  @media (min-width: 2199.98px){
+    .schedule-title{
+        height: 6vh;
+        h2, select, button, svg{
+            height: 100%;
+            font-size: 3vh;
+        }
+        .form-select{
+            width: 15vw !important;
+        }
+      }
+  }
+  @media (min-width: 2399.98px){
+  }
+  @media (min-width: 2699.98px){
+  }
+  @media (min-width: 2999.98px){
+  }
+  @media (min-width: 3199.98px){
+  }
+  @media (min-width: 3499.98px){
+  }
+  @media (min-width: 4099.98px){
+  }

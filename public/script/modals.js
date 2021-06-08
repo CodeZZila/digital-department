@@ -127,3 +127,35 @@ window.onclick = function(event) {
     modalconnections.style.display = "none";
   }
 }
+
+
+// Get the modal
+let modaladdstudents = document.getElementById("addStudents_modal");
+
+// Get the button that opens the modal
+let btnaddstudents = document.getElementById("addStudents_btn");
+
+// Get the <span> element that closes the modal
+let spansaddstudents = document.getElementsByClassName("closes")[0];
+
+// When the user clicks on the button, open the modal
+btnaddstudents.onclick = function() {
+  modaladdstudents.style.display = "flex";
+  modaladdstudents.style.opacity = "100%";
+  modaladdstudents.style.transform = "translateY(-10px)";
+}
+
+// When the user clicks on <span> (x), close the modal
+spansaddstudents.onclick = function() {
+  modaladdstudents.style.display = "none";
+  modaladdstudents.style.opacity = "0";
+  modaladdstudents.style.transform = "translateY(0)";
+
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modaladdstudents) {
+    modaladdstudents.style.display = "none";
+  }
+}

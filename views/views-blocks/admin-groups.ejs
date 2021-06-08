@@ -2,8 +2,10 @@
     <div class="admin-groups admin-cont">
         <div class="admin-header">
             <h2>Налаштування груп</h2>
-            <button id="groups_btn" class="plus_btn"><svg xmlns="http://www.w3.org/2000/svg" fill="white" width="20" height="20" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg></button>
-
+            <div class="btns" style="display: flex; align-items: center; justify-content: center;">
+                <button id="groups_btn" class="plus_btn" style="margin-right: .5em;"> <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="24" height="24" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg></button>
+                <button id="addStudents_btn" class="blue_btn" style="padding: .5em;">Додати файл</button>
+            </div>
         </div>
         <hr>
         <div class="admin-body">
@@ -55,3 +57,19 @@
     </div>
   
   </div>
+
+  
+<div id="addStudents_modal" class="modal">
+
+    <div class="modal-content">
+      <span class="close closes">&times;</span>
+      <div class="modal-body">
+           <form id="upload-container" method="POST" action="">
+               <input type="file" class="file-inpul" name="file" >
+        </form>
+        <h6> Обраний файл не підходить</h6>
+      </div>
+      <button class="blue_btn">Зберегти</button>
+    </div>
+  </div>
+
