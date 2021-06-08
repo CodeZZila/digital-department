@@ -26,7 +26,9 @@ adminRouter.post('/addSubject',urlencodedParser, adminRestController.addSubject)
 adminRouter.delete('/subject/:id',urlencodedParser, adminRestController.deleteSubject);
 adminRouter.post('/addGroup',urlencodedParser, adminRestController.addGroup);
 adminRouter.delete('/group/:id',urlencodedParser, adminRestController.deleteGroup);
-adminRouter.post('/addCadets', upload.single('filedata'), adminRestController.addCadets)
+adminRouter.post('/addCadets', upload.single('filedata'), adminRestController.addCadets);
+adminRouter.post('/addTeacher',urlencodedParser, adminRestController.addTeacher);
+
 
 
 

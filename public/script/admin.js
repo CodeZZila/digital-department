@@ -99,6 +99,20 @@ function addCadets() {
 
 }
 
+function addTeacher(){
+    $.ajax({
+        url: 'admin/addTeacher',           /* Куда пойдет запрос */
+        method: 'post',             /* Метод передачи (post или get) */
+        dataType: 'json',          /* Тип данных в ответе (xml, json, script, html). */
+        data: {
+            nameTeacher: document.getElementById('nameTeacher').value,
+            surnameTeacher: document.getElementById('surnameTeacher').value
+        },          /* Параметры передаваемые в запросе. */
+
+    });
+
+}
+
 
 
     

@@ -29,3 +29,7 @@ exports.findById = async function (id) {
 exports.findByIdUser = async function (idUser) {
     return Teacher.find({userId: idUser});
 };
+
+exports.findByFullName = async function (name) {
+    return Teacher.find({nameGroup: name});
+};
