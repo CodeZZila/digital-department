@@ -19,7 +19,9 @@ exports.getAll =  function (req, res) {
                 relationController.findAll().then(relations=>{
                     res.render('admin',{
                         subjects:subjects,
-                        groups:groups
+                        groups:groups,
+                        teachers:teachers
+
                     })
                 })
             })
@@ -86,7 +88,7 @@ exports.addTeacher = async function (req, res) {
 }
 
 exports.deleteTeacher = function(req,res){
-    console.log(req.params.id)
+    console.log(req.params.id);
     res.send (teacherController.deleteById(req.params.id));
 }
 

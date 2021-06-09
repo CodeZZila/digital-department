@@ -113,6 +113,37 @@ function addTeacher(){
 
 }
 
+function deleteTeacher(obj) {
+    $.ajax({
+        url: 'admin/teacher/' + obj,           /* Куда пойдет запрос */
+        method: 'delete',             /* Метод передачи (post или get) */
+        dataType: 'json',          /* Тип данных в ответе (xml, json, script, html). */
+        /* Параметры передаваемые в запросе. */
+    });
+}
+
+function addRelation(){
+    let subject_id;
+    let group_id;
+    let teacher_id;
+    $("#idSubject").change(function() {
+
+        subject_id = $('#datalistOptions_idSubject option[value="' + $('#idSubject').val() + '"]').data('id');
+    }).change();
+    $("#idGroup").change(function() {
+
+        group_id = $('#datalistOptions_idGroup option[value="' + $('#idGroup').val() + '"]').data('id');
+    }).change();
+    $("#idTeacher").change(function() {
+
+        teacher_id = $('#datalistOptions_idTeacher option[value="' + $('#idTeacher').val() + '"]').data('id');
+    }).change();
+    console.log(subject_id);
+    console.log(group_id);
+    console.log(teacher_id);
+
+}
+
 
 
     
