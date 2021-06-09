@@ -8,14 +8,31 @@
     <title>Document</title>
 </head>
 <body>
-    <table>
-        <% for(let i = 0; i < groups; i++){%>
+<h1><%= subject.fullname %> (<%= subject.abbreviation %>)</h1>
+<table>
+    <thead>
         <tr>
-            <th><%i+1%></th>
-            <th><%groups[i].nameGroup%></th>
-            <th><a href="/"></a><%groups[i].nameGroup%></th>
+            <td>#</td>
+            <td>Група</td>
+            <td>Дія</td>
         </tr>
-        <% }%>
-    </table>
+    </thead>
+    <tbody>
+    <% for(let i = 0; i < groups.length; i++){ %>
+    <tr>
+        <th>
+            <%= i+1 %>
+        </th>
+        <th>
+            <%= groups[i].nameGroup %>
+        </th>
+        <th>
+            <a href="/teacher/table?groupId=<%= groups[i]._id %>&subjectId=<%= subject._id %>">перейти</a>
+        </th>
+    </tr>
+    <% } %>
+    </tbody>
+</table>
+
 </body>
 </html>
