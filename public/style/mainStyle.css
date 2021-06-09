@@ -49,6 +49,10 @@ ol[class] {
   list-style: none;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500 !important;
+}
+
 /* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
 a {
   color: inherit;

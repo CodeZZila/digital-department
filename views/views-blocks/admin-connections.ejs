@@ -36,36 +36,44 @@
 <div id="connections_modal" class="modal">
 
     <div class="modal-content">
-      <span class="close">&times;</span>
-      <div class="mb-3">
-        <label for="idSubject" class="form-label">Назва дисципліни</label>
-        <input class="form-control" list="datalistOptions_idSubject" id="idSubject" placeholder="Нажміть для пошуку...">
-        <datalist id="datalistOptions_idSubject">
-          <option value="КПП">
-          <option value="ООП">
-          <option value="АП">
-        </datalist>
+      <div class="modal-header">
+          <h3>Додати зв'язок</h3>
+        <span class="close" id="connections-close">&times;</span>
       </div>
-      <div class="mb-3">
-        <label for="idGroup" class="form-label">Номер групи</label>
-        <input class="form-control" list="datalistOptions_idGroup" id="idGroup" placeholder="Нажміть для пошуку...">
-        <datalist id="datalistOptions_idGroup">
-          <option value="281">
-          <option value="282">
-          <option value="283">
-        </datalist>
-      </div>
-      <div class="mb-5">
-        <label for="idTeacher" class="form-label">Викладач</label>
-        <input class="form-control" list="datalistOptions_idTeacher" id="idTeacher" placeholder="Нажміть для пошуку...">
-        <datalist id="datalistOptions_idTeacher">
-          <option value="Редзюк">
-          <option value="Власенко">
-          <option value="Фесьоха">
-        </datalist>
+      <div class="modal-body">
+        <div class="form__group field">
+          <label for="idSubject" class="form__label">Назва дисципліни</label>
+          <input class="form__field" list="datalistOptions_idSubject" id="idSubject" placeholder="Нажміть для пошуку...">
+          <datalist id="datalistOptions_idSubject">
+            <option value="КПП">
+            <option value="ООП">
+            <option value="АП">
+          </datalist>
+        </div>
+        <div class="form__group field">
+          <label for="idGroup" class="form__label">Номер групи</label>
+          <input class="form__field" list="datalistOptions_idGroup" id="idGroup" placeholder="Нажміть для пошуку...">
+          <datalist id="datalistOptions_idGroup">
+            <option value="281">
+            <option value="282">
+            <option value="283">
+          </datalist>
+        </div>
+        <div class="form__group field">
+          <label for="idTeacher" class="form__label">Викладач</label>
+          <input class="form__field" list="datalistOptions_idTeacher" id="idTeacher" placeholder="Нажміть для пошуку...">
+          <datalist id="datalistOptions_idTeacher">
+            <option value="Редзюк">
+            <option value="Власенко">
+            <option value="Фесьоха">
+          </datalist>
+        </div>
       </div>
       <button class="blue_btn">Зберегти</button>
 
     </div>
   
   </div>
+<script>
+  
+</script>
