@@ -25,3 +25,13 @@ exports.findAll = async function () {
 exports.findById = async function (id) {
     return Mark.findById(id);
 };
+
+exports.findByIdSubjectAndIdStudent = async function (idSubject, idStudent) {
+    return Mark.find({idStudent: idStudent, idStudent: idStudent});
+};
+
+exports.findByIdAndUpdateMark = async function (id, value) {
+    let mark = await Mark.findById(id);
+    mark.mark = value;
+    return Mark.findByIdAndUpdate(id, mark, { useFindAndModify: false });
+};

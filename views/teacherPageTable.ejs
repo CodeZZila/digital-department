@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%=teacher.nameTeacher%> <%=teacher.surnameTeacher%></h1>
+    <h1><%=group.nameGroup%></h1>
+    <h1><%=subject.abbreviation%></h1>
+    <form style="display: flex" action="/teacher/table/addLesson" method="post">
+        <p>тип</p>
+        <input type="text" name="type">
+        <p>номер</p>
+        <input type="text" name="numberOfLesson">
+        <input type="text" value="<%=subject._id%>" hidden readonly name="idSubject">
+        <input type="text" value="<%=group._id%>" hidden readonly name="idGroup">
+        <input type="submit" value="створити">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Студент</th>
+                <% for(let item of numbersAndType){%>
+                <th>
+                    <%= item.type%> <%= item.numberOfLesson%>
+                    <form method="post" action="/teacher/table/remove">
+                        <input type="text" value="<%= subject._id%>" hidden readonly name="idSubject">
+                        <input type="text" value="<%= group._id%>" hidden readonly name="idGroup">
+                        <input type="text" value="<%= item.type%>" hidden readonly name="type">
+                        <input type="text" value="<%= item.numberOfLesson%>" hidden readonly name="numberOfLesson">
+                        <input type="submit" value="видалити">
+                    </form>
+                </th>
+                <% }%>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i = 0; i < students.length; i++){%>
+            <tr>
+                <th><%=i+1%></th>
+                <th><%=students[i].fullNameStudent%></th>
+                <% for(let item of numbersAndType){%>
+                    <th>
+                        <% let mark = marks.find(el => el.type === item.type && el.numbersAndType === item.numbersAndType && el.idStudent.equals(students[i]._id)) %>
+                        <input id="<%=mark._id %>" type="text" value="<%=mark.mark %>" onchange="changeData(this)">
+                    </th>
+                <% }%>
+            </tr>
+            <% }%>
+        </tbody>
+    </table>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="/script/teacherTable.js"></script>
+</body>
+</html>
