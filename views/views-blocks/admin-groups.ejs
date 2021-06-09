@@ -47,15 +47,16 @@
 <div id="groups_modal" class="modal">
 
     <div class="modal-content">
-      <span class="close">&times;</span>
-      <div class="mb-3">
-        <label for="nameGroup" class="form-label">Номер групи</label>
-        <input name="nameGroup" type="number" class="form-control" id="nameGroup" placeholder="">
-      </div>
-      <div class="mb-3">
-        <label  for="students" class="form-label">Число курсантів</label>
-        <input name="students" type="number" class="form-control" id="students" placeholder="">
-      </div>
+        <div class="modal-header">
+            <h3>Додати групу</h3>
+            <span id="groups-close" class="close">&times;</span>
+        </div>
+      <div class="modal-body">
+          <div class="form__group fiels">
+            <label for="nameGroup" class="form__label">Номер групи</label>
+            <input name="nameGroup" type="number" class="form__field" id="nameGroup" placeholder="">
+          </div>
+        </div>
       <button onclick="addGroup()" class="blue_btn">Зберегти</button>
 
     </div>
@@ -66,7 +67,10 @@
 <div id="addStudents_modal" class="modal">
 
     <div class="modal-content">
-      <span class="close closes">&times;</span>
+        <div class="modal-header">
+            <h3>Додати файл</h3>
+            <span class="close" id="addStudents-close">&times;</span>
+        </div>
       <div class="modal-body">
            <form id="upload-container" method="POST" action="" enctype="multipart/form-data">
                <input id="fileInput" name="filedata" type="file" accept=".txt"  class="file-inpul"  >
@@ -76,4 +80,6 @@
       <button onclick="addCadets()" class="blue_btn">Зберегти</button>
     </div>
   </div>
-
+<script>
+document.getElementById('file-not-correct').style.display = 'none'
+</script>

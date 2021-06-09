@@ -7,7 +7,7 @@
         </div>
         <hr>
         <div class="admin-body">
-            <table id="teachers_table" class="admin-table">
+            <table id="teachers_table" class="admin-table hover">
                 <thead>
                     <th>#</th>
                     <th>Призвіще</th>
@@ -43,22 +43,25 @@
 <div id="teachers_modal" class="modal">
 
     <div class="modal-content">
-      <span class="close">&times;</span>
-      <div class="mb-3">
-        <label for="nameTeacher" class="form-label">Ім'я</label>
-        <input name="nameTeacher" type="text" class="form-control" id="nameTeacher" placeholder="">
+        <div class="modal-header">
+            <h3>Додати викладача</h3>
+            <span class="close" id="teachers-close">&times;</span>
       </div>
-      <div class="mb-3">
-        <label  for="surnameTeacher" class="form-label">Призвіще</label>
-        <input name="surnameTeacher" type="text" class="form-control" id="surnameTeacher" placeholder="">
+      <div class="modal-body">
+        <div class="form__group field">
+          <label for="nameTeacher" class="form__label">Ім'я</label>
+          <input name="nameTeacher" type="text" class="form__field" id="nameTeacher" placeholder="">
+        </div>
+        <div class="form__group field">
+          <label  for="surnameTeacher" class="form__label">Призвіще</label>
+          <input name="surnameTeacher" type="text" class="form__field" id="surnameTeacher" placeholder="">
+        </div>
+        <div class="form__group field">
+          <label  for="email" class="form__label">Email</label>
+          <input name="email" type="email" class="form__field" id="email" placeholder="">
+        </div>
       </div>
-      <div class="mb-3">
-        <label  for="email" class="form-label">Email</label>
-        <input name="email" type="email" class="form-control" id="email" placeholder="">
-      </div>
-
       <button onclick="addTeacher()" class="blue_btn">Зберегти</button>
-
     </div>
   
   </div>

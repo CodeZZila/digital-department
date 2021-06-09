@@ -148,8 +148,8 @@ $lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
   
 }
 .schedule-table{
-    
-    height: 95vh;
+    padding: 0 3em;
+    height: 93vh;
     table{
         width: 100%;
         height: 100%;
@@ -178,7 +178,7 @@ $lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
         width: 100%;
     }
     th{
-        font-size: 3vh;
+        font-size: 6vh;
     }
     thead{
         th{

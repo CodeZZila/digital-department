@@ -6,7 +6,7 @@
         </div>
         <hr>
         <div class="admin-body">
-            <table id="disc_table" class="admin-table">
+            <table id="disc_table" class="admin-table table-striped">
                 <thead>
                     <th>#</th>
                     <th>Назва дисципліни</th>
@@ -38,11 +38,13 @@
         </div>
     </div>
 
-    
+<!--     
 <div id="discipline_modal" class="modal">
-
     <div class="modal-content">
-      <span class="close">&times;</span>
+        <div class="modal-header">
+            <h5>Редагувати дисципліну</h5>
+            <span class="close" id="discipline-close">&times;</span>
+        </div>
       <div class="mb-3">
         <label for="fullname" class="form-label">Назва дисципліни</label>
         <input name="fullname" type="text" class="form-control" id="fullname" placeholder="">
@@ -52,7 +54,25 @@
         <input name="abbreviation" type="text" class="form-control" id="abbreviation" placeholder="">
       </div>
       <button onclick="addSubject()" class="blue_btn">Зберегти</button>
-
     </div>
-  
+  </div>
+   -->
+<div id="discipline_modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Додати дисципліну</h3>
+            <span class="close" id="discipline-close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="form__group field">
+              <input name="fullname" type="text" class="form__field" id="fullname" placeholder="">
+              <label for="fullname" class="form__label">Назва дисципліни</label>
+            </div>
+            <div class="form__group field">
+              <input name="abbreviation" type="text" class="form__field" id="abbreviation" placeholder="">
+              <label  for="abbreviation" class="form__label">Аббревіатура</label>
+            </div>
+        </div>
+            <button onclick="addSubject()" class="blue_btn">Зберегти</button>
+    </div>
   </div>

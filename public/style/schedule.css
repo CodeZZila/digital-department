@@ -168,7 +168,8 @@
   }
 }
 .schedule .schedule-table {
-  height: 95vh;
+  padding: 0 3em;
+  height: 93vh;
 }
 .schedule .schedule-table table {
   width: 100%;
@@ -200,7 +201,7 @@
   width: 100%;
 }
 .schedule .schedule-table th {
-  font-size: 3vh;
+  font-size: 6vh;
 }
 .schedule .schedule-table tbody th > div {
   min-height: 130px;
