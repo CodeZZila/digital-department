@@ -115,7 +115,7 @@ $shadowColor, $textColor, $font-size)
      display: flex;
      align-items: center;
      justify-content: center;
-      @include createButton(100%,2em,.2em,#4889d8,#4889d8,#4889d8b4,#ffffff,1.3em);
+      @include createButton(100%,2em,.2em,#4889d8,#4889d8,#4889d8b4,#ffffff,1.2em);
     }
 .modal {
     display: none;
@@ -158,5 +158,12 @@ $shadowColor, $textColor, $font-size)
         cursor: pointer;
       }
 
-
   }
+
+
+
+  .addStudents_modal{
+    h6{
+      color: rgb(174, 60, 60);
+    }
+}

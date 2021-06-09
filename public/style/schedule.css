@@ -41,7 +41,7 @@
 .schedule .schedule-block .text-group {
   font-weight: 900;
   font-size: 60px;
-  font-size: 7em;
+  font-size: 10vh;
   line-height: 1em;
   text-align: center;
   color: rgba(255, 255, 255, 0.915);
@@ -55,7 +55,7 @@
   font-weight: bold;
   font-size: 39px;
   line-height: 1em;
-  font-size: 3.5em;
+  font-size: 5vh;
   font-style: normal;
   text-align: center;
   color: #FFFFFF;
@@ -63,7 +63,7 @@
 .schedule .schedule-block .teacher {
   font-weight: bold;
   font-size: 20px;
-  font-size: 2.5em;
+  font-size: 4vh;
   text-align: center;
   color: #FFFFFF;
 }
@@ -100,7 +100,10 @@
       -ms-flex-pack: center;
           justify-content: center;
   font-weight: 400;
-  color: #6f6f6f;
+  color: #989898;
+  height: 5vh;
+  padding-bottom: 1em;
+  font-weight: 500;
 }
 .schedule .time .clock {
   height: 5vh;
@@ -164,30 +167,40 @@
     -o-transform: translateY(-5vh);
   }
 }
-.schedule .schedule-table table {
+.schedule .schedule-table {
   height: 95vh;
-  width: 100vw;
+}
+.schedule .schedule-table table {
+  width: 100%;
+  height: 100%;
 }
 .schedule .schedule-table tr {
   text-align: center;
 }
-.schedule .schedule-table .td {
-  height: 100%;
-  min-height: 100%;
+.schedule .schedule-table td {
+  padding: 0.5em;
+  min-width: 20vw;
+  max-width: 25vw;
 }
 .schedule .schedule-table form {
+  width: 100%;
   height: 100%;
-  -webkit-padding-before: 0.5em;
-          padding-block-start: 0.5em;
-  -webkit-padding-after: 0.5em;
-          padding-block-end: 0.5em;
-  padding: 0.5em;
+  margin: 0.1s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.schedule .schedule-table .first {
+  width: 100%;
+}
+.schedule .schedule-table .second {
+  padding: 0.1em;
+  width: 100%;
 }
 .schedule .schedule-table th {
-  font-size: 2.5em;
-  font-weight: 700;
-  text-align: center;
-  padding: 0 !important;
+  font-size: 3vh;
 }
 .schedule .schedule-table tbody th > div {
   min-height: 130px;
@@ -246,4 +259,17 @@
 }
 .footer .submit-button .loading {
   display: none;
+}
+
+@media (min-width: 2199.98px) {
+  .schedule-title {
+    height: 6vh;
+  }
+  .schedule-title h2, .schedule-title select, .schedule-title button, .schedule-title svg {
+    height: 100%;
+    font-size: 3vh;
+  }
+  .schedule-title .form-select {
+    width: 15vw !important;
+  }
 }
