@@ -23,6 +23,7 @@ const adminRouter = express.Router();
 
 adminRouter.get('/', roleMiddleware(['ADMIN']), adminRestController.getAll );
 adminRouter.post('/addSubject',urlencodedParser, adminRestController.addSubject);
+adminRouter.get('/getSubject', adminRestController.getSubject)
 adminRouter.delete('/subject/:id',urlencodedParser, adminRestController.deleteSubject);
 adminRouter.post('/addGroup',urlencodedParser, adminRestController.addGroup);
 adminRouter.delete('/group/:id',urlencodedParser, adminRestController.deleteGroup);
