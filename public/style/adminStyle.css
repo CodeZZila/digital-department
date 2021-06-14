@@ -92,6 +92,18 @@
   background-color: rgba(255, 255, 255, 0);
 }
 
+table {
+  width: 100% !important;
+}
+
+.paginate_button.current {
+  background: rgba(243, 243, 243, 0.61) !important;
+}
+
+.paginate_button:hover {
+  background: rgba(224, 224, 224, 0.34) !important;
+}
+
 .plus_btn {
   transition: 0.3s ease;
   -webkit-transition: 0.3s ease;

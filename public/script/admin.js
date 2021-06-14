@@ -1,21 +1,78 @@
 $(document).ready(function () {
     $('#disc_table').DataTable({
         paging: true,
-        searching: true
+        searching: true,
+        "language": {
+            "lengthMenu": "Кількість записів на сторінці _MENU_ ",
+            "zeroRecords": "Немає результатів",
+            "info": "Показана сторінка _PAGE_ з _PAGES_",
+            "infoEmpty": "Таких записів не існує",
+            "infoFiltered": "(_MAX_ всього існує)",
+            "search": 'Пошук',
+            "paginate": {
+                "previous": "Попередня",
+                "next": "Наступна"
+            }
+        },
+        "columns": [
+            { "width": "1em"},
+            { "width": "40%"},
+            null,
+            { "width": "1.1em"},
+            { "width": "1.1em"}
+        ]
     });
 });
 
 $(document).ready(function () {
     $('#groups_table').DataTable({
         paging: true,
-        searching: true
+        searching: true,
+        "language": {
+            "lengthMenu": "Кількість записів на сторінці _MENU_ ",
+            "zeroRecords": "Немає результатів",
+            "info": "Показана сторінка _PAGE_ з _PAGES_",
+            "infoEmpty": "Таких записів не існує",
+            "infoFiltered": "(_MAX_ всього існує)",
+            "search": 'Пошук',
+            "paginate": {
+                "previous": "Попередня",
+                "next": "Наступна"
+            }
+        },
+        "columns": [
+            { "width": "1em"},
+            null,
+            null,
+            { "width": "1.1em"},
+            { "width": "1.1em"}
+        ]
     });
 });
 
 $(document).ready(function () {
     $('#teachers_table').DataTable({
         paging: true,
-        searching: true
+        searching: true ,
+        "language": {
+            "lengthMenu": "Кількість записів на сторінці _MENU_ ",
+            "zeroRecords": "Немає результатів",
+            "info": "Показана сторінка _PAGE_ з _PAGES_",
+            "infoEmpty": "Таких записів не існує",
+            "infoFiltered": "(_MAX_ всього існує)",
+            "search": 'Пошук',
+            "paginate": {
+                "previous": "Попередня",
+                "next": "Наступна"
+            }
+        },
+        "columns": [
+            { "width": "1em"},
+            null,
+            null,
+            { "width": "1.1em"},
+            { "width": "1.1em"}
+        ]
     });
 });
 
@@ -23,7 +80,26 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#connections_table').DataTable({
         paging: true,
-        searching: true
+        searching: true,
+        "language": {
+            "lengthMenu": "Кількість записів на сторінці _MENU_ ",
+            "zeroRecords": "Немає результатів",
+            "info": "Показана сторінка _PAGE_ з _PAGES_",
+            "infoEmpty": "Таких записів не існує",
+            "infoFiltered": "(_MAX_ всього існує)",
+            "search": 'Пошук',
+            "paginate": {
+                "previous": "Попередня",
+                "next": "Наступна"
+            }
+        },
+        "columns": [
+            { "width": "1em"},
+            { "width": "20%"},
+            null,
+            { "width": "1.1em"},
+            { "width": "1.1em"}
+        ]
     });
 });
 
