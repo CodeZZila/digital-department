@@ -35,6 +35,12 @@ exports.addSubject = async function(req,res){
     res.send (subjectController.create(req.body));
 }
 
+exports.getSubject = function all(req, res){
+    subjectController.findAll().then(subjects=>{
+        res.send(subjects)
+    })
+}
+
 exports.deleteSubject = async function(req,res){
     console.log(req.params.id)
     res.send(subjectController.deleteById(req.params.id));
@@ -75,7 +81,7 @@ exports.addTeacher = async function (req, res) {
     let login=translite(surname).replace(/\s/g, '').toLowerCase()+translite(name).replace(/\s/g, '').toLowerCase();
     let password=translite(surname).replace(/\s/g, '')+Math.round(99 + Math.random() * (999 - 99));
 
-    let user = {_id:id, username:login,password:bcrypt.hashSync(password, salt), role:'TEACHER', email:email}
+    let user = {_id:id, username:login, password:bcrypt.hashSync(password, salt), role:'TEACHER', email:email}
     let teacher = {nameTeacher:name,surnameTeacher:surname, userId:id}
 
     await sendEmail.send(email, name,surname,login, password);
