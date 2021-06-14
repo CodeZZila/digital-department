@@ -12,7 +12,7 @@ const sec = require('../controllers/authController');
 exports.getStartView = async function (req, res) {
     let teacher = (await teacherController.findByIdUser(jwt.verify(sec.tok, secret).id))[0];
 
-    let relationsFromTeacher = await relationController.findAllByIdTeacher("60b9c97afea6841b94c2cbae");
+    let relationsFromTeacher = await relationController.findAllByIdTeacher(teacher._id);
     let subjectFromTeacher = [];
     for await (let item of relationsFromTeacher) {
         subjectFromTeacher.push(await subjectController.findById(item.idSubject));
