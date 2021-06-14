@@ -28,7 +28,7 @@ adminRouter.post('/addGroup',urlencodedParser, adminRestController.addGroup);
 adminRouter.delete('/group/:id',urlencodedParser, adminRestController.deleteGroup);
 adminRouter.post('/addCadets', upload.single('filedata'), adminRestController.addCadets);
 adminRouter.post('/addTeacher',urlencodedParser, adminRestController.addTeacher);
-
+adminRouter.delete('/teacher/:id',urlencodedParser, adminRestController.deleteTeacher)
 
 
 
