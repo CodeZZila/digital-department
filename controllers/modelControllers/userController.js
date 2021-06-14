@@ -1,15 +1,4 @@
 const User = require('../../models/User');
-const nodemailer = require('nodemailer')
-
-let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'digitaldepartment22@gmail.com',
-        pass: 'zsxadc1234',
-    },
-})
-
-
 
 function exception (err) {
     if (err) return "error 400";
@@ -18,9 +7,6 @@ function exception (err) {
 
 
 
-function enterEmail(){
-
-}
 
 exports.create = async function (object) {
 

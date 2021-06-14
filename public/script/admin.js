@@ -99,14 +99,15 @@ function addCadets() {
 
 }
 
-function addTeacher(){
+ function addTeacher(){
     $.ajax({
         url: 'admin/addTeacher',           /* Куда пойдет запрос */
         method: 'post',             /* Метод передачи (post или get) */
         dataType: 'json',          /* Тип данных в ответе (xml, json, script, html). */
         data: {
             nameTeacher: document.getElementById('nameTeacher').value,
-            surnameTeacher: document.getElementById('surnameTeacher').value
+            surnameTeacher: document.getElementById('surnameTeacher').value,
+            email:document.getElementById('email').value
         },          /* Параметры передаваемые в запросе. */
 
     });
@@ -141,6 +142,19 @@ function addRelation(){
     console.log(subject_id);
     console.log(group_id);
     console.log(teacher_id);
+
+    $.ajax({
+        url: 'admin/addRelation',           /* Куда пойдет запрос */
+        method: 'post',             /* Метод передачи (post или get) */
+        dataType: 'json',          /* Тип данных в ответе (xml, json, script, html). */
+        data: {
+            idSubject: subject_id,
+            idGroup: group_id,
+            idTeacher: teacher_id,
+        },          /* Параметры передаваемые в запросе. */
+
+    });
+
 
 }
 
