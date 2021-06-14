@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/mainStyle.css">
+    <link rel="stylesheet" href="/style/teacher.css">
+    <title>Digital Department</title>
+</head>
+<body>
+    <div class="wrapper">
+        <%- include('views-blocks/header') %>
+        <main>
+            <section>
+                <div class="teacher-header">
+                    <h2>Особистий кабінет - <b>Олександр Власенко</b></h2>
+                    <button id="settings_btn" class="btn settings ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#888" width="24" height="24" viewBox="0 0 24 24"><path d="M24 13.616v-3.232c-1.651-.587-2.694-.752-3.219-2.019v-.001c-.527-1.271.1-2.134.847-3.707l-2.285-2.285c-1.561.742-2.433 1.375-3.707.847h-.001c-1.269-.526-1.435-1.576-2.019-3.219h-3.232c-.582 1.635-.749 2.692-2.019 3.219h-.001c-1.271.528-2.132-.098-3.707-.847l-2.285 2.285c.745 1.568 1.375 2.434.847 3.707-.527 1.271-1.584 1.438-3.219 2.02v3.232c1.632.58 2.692.749 3.219 2.019.53 1.282-.114 2.166-.847 3.707l2.285 2.286c1.562-.743 2.434-1.375 3.707-.847h.001c1.27.526 1.436 1.579 2.019 3.219h3.232c.582-1.636.75-2.69 2.027-3.222h.001c1.262-.524 2.12.101 3.698.851l2.285-2.286c-.744-1.563-1.375-2.433-.848-3.706.527-1.271 1.588-1.44 3.221-2.021zm-12 2.384c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"/></svg>
+                    </button>
+                </div>
+                <hr>
+                <div class="teacher-body">
+                    <h3>Доступні дисципліни</h3>
+                    <div class="teacher-disciplines">
+                        <a class="discipline-block">
+                            <div class="discipline-block-content">
+                                <div class="content">
+                                    <div class="title">OOP</div>
+                                    <div class="groups">281, 282, 283</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="discipline-block">
+                            <div class="discipline-block-content">
+                                <div class="content">
+                                    <div class="title">OOP</div>
+                                    <div class="groups">281, 282, 283</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="discipline-block">
+                            <div class="discipline-block-content">
+                                <div class="content">
+                                    <div class="title">OOP</div>
+                                    <div class="groups">281, 282, 283</div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="discipline-block">
+                            <div class="discipline-block-content">
+                                <div class="content">
+                                    <div class="title">OOP</div>
+                                    <div class="groups">281, 282, 283</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="discipline-block">
+                            <div class="discipline-block-content">
+                                <div class="content">
+                                    <div class="title">OOP</div>
+                                    <div class="groups">281, 282, 283</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="discipline-block">
+                            <div class="discipline-block-content">
+                                <div class="content">
+                                    <div class="title">OOP</div>
+                                    <div class="groups">281, 282, 283</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+        <%- include('views-blocks/footer') %>
+    </div>
+</body>
+
+<div id="settings_modal" class="modal">
+
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 style="margin-right: 2em;">Налаштування особистого кабінету</h2>
+            <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <form>
+                <!-- змінити пароль, редагувати ПІ, емаил -->
+
+      <div class="form__group field">
+        <input type="text" class="form__field" placeholder="Name" name="name" id='name' required value="Олександр" />
+        <label for="name" class="form__label">ім'я</label>
+      </div>
+      <div class="form__group field">
+        <input type="text" class="form__field" placeholder="surname" name="surname" id='surname' required value="Власенко"/>
+        <label for="surname" class="form__label">призвіще</label>
+      </div>
+      <div class="form__group field">
+        <input type="email" class="form__field" placeholder="email" name="email" id='email' required value="olexvla@gmail.com"/>
+        <label for="email" class="form__label">email</label>
+      </div>
+      <div class="form__group field">
+        <input type="password" class="form__field" placeholder="password" name="password" id='password' required />
+        <label for="password" class="form__label">Змінити пароль</label>
+      </div>
+            </form>
+        </div>
+      <button class="btn save-btn">Зберегти</button>
+    </div>
+
+  </div>
+  <script>
+document.getElementById('login').innerText = 'Вихід';
+
+// Get the modal
+let modalSettings = document.getElementById("settings_modal");
+
+// Get the button that opens the modal
+let btnSettings = document.getElementById("settings_btn");
+
+// Get the <span> element that closes the modal
+let spanSettings = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btnSettings.onclick = function() {
+  modalSettings.style.display = "flex";
+  modalSettings.style.opacity = "100%";
+  modalSettings.style.transform = "translateY(-10px)";
+}
+
+// When the user clicks on <span> (x), close the modal
+spanSettings.onclick = function() {
+  modalSettings.style.display = "none";
+  modalSettings.style.opacity = "0";
+  modalSettings.style.transform = "translateY(0)";
+
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modalSettings) {
+    modalSettings.style.display = "none";
+  }
+}
+  </script>
+</html>

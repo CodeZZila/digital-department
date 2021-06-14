@@ -23,12 +23,15 @@ const adminRouter = express.Router();
 
 adminRouter.get('/', roleMiddleware(['ADMIN']), adminRestController.getAll );
 adminRouter.post('/addSubject',urlencodedParser, adminRestController.addSubject);
+adminRouter.get('/getSubject', adminRestController.getSubject)
 adminRouter.delete('/subject/:id',urlencodedParser, adminRestController.deleteSubject);
 adminRouter.post('/addGroup',urlencodedParser, adminRestController.addGroup);
 adminRouter.delete('/group/:id',urlencodedParser, adminRestController.deleteGroup);
 adminRouter.post('/addCadets', upload.single('filedata'), adminRestController.addCadets);
 adminRouter.post('/addTeacher',urlencodedParser, adminRestController.addTeacher);
-adminRouter.delete('/teacher/:id',urlencodedParser, adminRestController.deleteTeacher)
+adminRouter.delete('/teacher/:id',urlencodedParser, adminRestController.deleteTeacher);
+adminRouter.post('/addRelation',urlencodedParser, adminRestController.addRelation);
+
 
 
 
