@@ -20,7 +20,8 @@ exports.getAll =  function (req, res) {
                     res.render('admin',{
                         subjects:subjects,
                         groups:groups,
-                        teachers:teachers
+                        teachers:teachers,
+                        relations:relations
 
                     })
                 })
@@ -32,6 +33,12 @@ exports.getAll =  function (req, res) {
 exports.addSubject = async function(req,res){
     console.log(req.body)
     res.send (subjectController.create(req.body));
+}
+
+exports.getSubject = function all(req, res){
+    subjectController.findAll().then(subjects=>{
+        res.send(subjects)
+    })
 }
 
 exports.deleteSubject = async function(req,res){
@@ -74,13 +81,10 @@ exports.addTeacher = async function (req, res) {
     let login=translite(surname).replace(/\s/g, '').toLowerCase()+translite(name).replace(/\s/g, '').toLowerCase();
     let password=translite(surname).replace(/\s/g, '')+Math.round(99 + Math.random() * (999 - 99));
 
-    let user = {_id:id, username:login,password:bcrypt.hashSync(password, salt), role:'TEACHER', email:'test-teacher@gmail.com'}
+    let user = {_id:id, username:login, password:bcrypt.hashSync(password, salt), role:'TEACHER', email:email}
     let teacher = {nameTeacher:name,surnameTeacher:surname, userId:id}
 
     await sendEmail.send(email, name,surname,login, password);
-
-    console.log(user)
-    console.log(teacher)
 
     await userController.create(user);
     await teacherController.create(teacher);
@@ -123,6 +127,7 @@ exports.addCadets = async function (req, res) {
     fs.unlink('./uploads/'+req.file.originalname,function(err){
         if(err) return console.log(err);
         console.log('file deleted successfully');
+
     });
     // res.send('OK');
 }
