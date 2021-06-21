@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style/adminStyle.css">
+    <link rel="stylesheet" href="../style/mainStyle.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <title>Digital Department</title>
+</head>
+<body>
+<div class="wrapper edit-group">
+    <%- include('views-blocks/header') %>
+
+        <section class="admin-header">
+            <div class="buttons">
+                <div style="display: flex; ">
+
+                    <a href="" style="display: flex; align-items: center;"><svg style="margin-right: 1.5em; " width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"/></svg>
+                        <h3>Редагування групи №</h3></a>
+
+                </div>
+                <div style="display: flex; ">
+                    <button id="rename_btn" class="blue_btn" style="width:max-content">Переіменувати групу</button>
+                    <button id="addCadet_btn" class="blue_btn" style="width:max-content; margin-left: 1em">Додати курсанта</button>
+                </div>
+            </div>
+        </section>
+
+    <section class="edit-group-body">
+        <div class="table">
+            <table id="edit-group-table" class="admin-table hover">
+                <thead>
+                <th>#</th>
+                <th>ПІБ студента</th>
+                <th></th>
+                <th></th>
+                </thead>
+                <tbody>
+                <tr>
+                    <th>1</th>
+                    <td>Беник</td>
+                    <td>
+                        <a id="editCadet_btn" class="table-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#4287f5" width="24" height="24" viewBox="0 0 24 24"><path d="M18.363 8.464l1.433 1.431-12.67 12.669-7.125 1.436 1.439-7.127 12.665-12.668 1.431 1.431-12.255 12.224-.726 3.584 3.584-.723 12.224-12.257zm-.056-8.464l-2.815 2.817 5.691 5.692 2.817-2.821-5.693-5.688zm-12.318 18.718l11.313-11.316-.705-.707-11.313 11.314.705.709z"/></svg>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="">
+                            <svg class="table-icon" fill="#f54242" xmlns="http://www.w3.org/2000/svg"  width="24" height="24" viewBox="0 0 24 24"><path d="M9 19c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5-17v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712zm-3 4v16h-14v-16h-2v18h18v-18h-2z"/></svg>
+                        </a>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <%- include('views-blocks/footer') %>
+
+
+    <div id="rename_modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Переіменувати групу</h3>
+                <span class="close" id="rename-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form__group field">
+                    <input name="groupname" type="text" class="form__field" id="groupname" placeholder="" value="281">
+                    <label for="groupname" class="form__label">Номер групи</label>
+                </div>
+            </div>
+            <button onclick="" class="blue_btn">Зберегти</button>
+        </div>
+    </div>
+
+    <div id="editCadet_modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Редагувати ПІБ курсанта</h3>
+                <span class="close" id="editCadet-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form__group field">
+                    <input name="fullname" type="text" class="form__field" id="fullname" placeholder="" value="Беник" >
+                    <label for="fullname" class="form__label">ПІБ</label>
+                </div>
+            </div>
+            <button onclick="" class="blue_btn">Зберегти</button>
+        </div>
+    </div>
+
+    <div id="addCadet_modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Додати курсанта</h3>
+                <span class="close" id="addCadet-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form__group field">
+                    <input name="fullname" type="text" class="form__field" id="fullname" placeholder="" >
+                    <label for="fullname" class="form__label">ПІБ</label>
+                </div>
+            </div>
+            <button onclick="" class="blue_btn">Зберегти</button>
+        </div>
+    </div>
+
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        $('#edit-group-table').DataTable({
+            paging: true,
+            searching: true,
+            "language": {
+                "lengthMenu": "Кількість записів на сторінці _MENU_ ",
+                "zeroRecords": "Немає результатів",
+                "info": "Показана сторінка _PAGE_ з _PAGES_",
+                "infoEmpty": "Таких записів не існує",
+                "infoFiltered": "(_MAX_ всього існує)",
+                "search": 'Пошук',
+                "paginate": {
+                    "previous": "Попередня",
+                    "next": "Наступна"
+                }
+            } ,
+            'autoWidth': false,
+            "columns": [
+                { "width": "1em"},
+                null,
+                { "width": "2em"},
+                { "width": "2em"}
+            ]
+        });
+    });
+
+    let modal = document.getElementById("rename_modal");
+    let btn1 = document.getElementById("rename_btn");
+    let spans = document.getElementById("rename-close");
+    btn1.onclick = function() {
+        modal.style.display = "flex";
+    }
+    spans.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+
+
+
+    let editCadet_modal = document.getElementById("editCadet_modal");
+    let editCadet_btn1 = document.getElementById("editCadet_btn");
+    let editCadet_spans = document.getElementById("editCadet-close");
+    editCadet_btn1.onclick = function() {
+        editCadet_modal.style.display = "flex";
+    }
+    editCadet_spans.onclick = function() {
+        editCadet_modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            editCadet_modal.style.display = "none";
+        }
+    }
+
+
+
+    let addCadet_modal = document.getElementById("addCadet_modal");
+    let addCadet_btn1 = document.getElementById("addCadet_btn");
+    let addCadet_spans = document.getElementById("addCadet-close");
+    addCadet_btn1.onclick = function() {
+        addCadet_modal.style.display = "flex";
+    }
+    addCadet_spans.onclick = function() {
+        addCadet_modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            addCadet_modal.style.display = "none";
+        }
+    }
+
+</script>
+</html>

@@ -1,4 +1,4 @@
 exports.getAll = function (req,res){
-    res.render('admin-editGroup');
+    res.render('main');
 };
 

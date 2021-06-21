@@ -1,3 +1,21 @@
+.edit-group .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1em 0;
+}
+.edit-group .admin-header {
+  background: #eee;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.edit-group .edit-group-body {
+  padding-top: 1em;
+}
+
 .page {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9,7 +27,7 @@
 .left-menu {
   background-color: #e8e9ea;
   color: #737576;
-  width: -webkit-max-content;
+  /*width: -webkit-max-content;*/
   width: -moz-max-content;
   width: max-content;
   position: fixed;
@@ -187,8 +205,8 @@ table td {
   margin: auto;
   /* 15% from the top and centered */
   padding: 1em;
-  height: -webkit-max-content;
-  height: -moz-max-content;
+  /*height: -webkit-max-content;*/
+  /*height: -moz-max-content;*/
   height: max-content;
   width: 30vw !important;
   /* Could be more or less, depending on screen size */
