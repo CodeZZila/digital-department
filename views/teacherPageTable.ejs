@@ -1,61 +1,125 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/mainStyle.css">
+    <link rel="shortcut icon" href="../img/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/style/journal.css">
+    <title>Digital Department</title>
 </head>
 <body>
-    <h1><%=teacher.nameTeacher%> <%=teacher.surnameTeacher%></h1>
-    <h1><%=group.nameGroup%></h1>
-    <h1><%=subject.abbreviation%></h1>
-    <form style="display: flex" action="/teacher/table/addLesson" method="post">
-        <p>тип</p>
-        <input type="text" name="type">
-        <p>номер</p>
-        <input type="text" name="numberOfLesson">
-        <input type="text" value="<%=subject._id%>" hidden readonly name="idSubject">
-        <input type="text" value="<%=group._id%>" hidden readonly name="idGroup">
-        <input type="submit" value="створити">
-    </form>
-    <table>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Студент</th>
-                <% for(let item of numbersAndType){%>
-                <th>
-                    <%= item.type%> <%= item.numberOfLesson%>
-                    <form method="post" action="/teacher/table/remove">
-                        <input type="text" value="<%= subject._id%>" hidden readonly name="idSubject">
-                        <input type="text" value="<%= group._id%>" hidden readonly name="idGroup">
-                        <input type="text" value="<%= item.type%>" hidden readonly name="type">
-                        <input type="text" value="<%= item.numberOfLesson%>" hidden readonly name="numberOfLesson">
-                        <input type="submit" value="видалити">
-                    </form>
-                </th>
-                <% }%>
-            </tr>
-        </thead>
-        <tbody>
-            <% for(let i = 0; i < students.length; i++){%>
-            <tr>
-                <th><%=i+1%></th>
-                <th><%=students[i].fullNameStudent%></th>
-                <% for(let item of numbersAndType){%>
-                    <th>
-                        <% let mark = marks.find(el => el.type === item.type && el.numbersAndType === item.numbersAndType && el.idStudent.equals(students[i]._id)) %>
-                        <input id="<%=mark._id %>" type="text" value="<%=mark.mark %>" onchange="changeData(this)">
-                    </th>
-                <% }%>
-            </tr>
-            <% }%>
-        </tbody>
-    </table>
+<div class="wrapper">
+    <%- include('views-blocks/header') %>
+    <main class="teacher-journal">
+        <section class="journal-header">
+            <a href="/teacher/" style="display: flex; align-items: center;">
+                <svg style="margin-right: 1.5em; " width="24" height="24" xmlns="http://www.w3.org/2000/svg"
+                     fill-rule="evenodd" clip-rule="evenodd">
+                    <path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"/>
+                </svg>
+                <%= teacher.nameTeacher %> <%= teacher.surnameTeacher %></a>
+            <div class="text discipline"><%= subject.abbreviation %> - <%= group.nameGroup %></div>
+            <button id="lesson_btn" class="button small-blue-btn" style="margin-right: .5em;">Додати заняття</button>
+        </section>
+        <section>
+            <div class="journal-body">
+                <table class="teacher_table">
+                    <thead>
+                    <th>#</th>
+                    <th>Призвіще</th>
+                    <% for(let item of numbersAndType){ %>
+                        <th>
+                            <div class="jornal-table-th"><%= item.type %> <%= item.numberOfLesson %>
+                                <form method="post" action="/teacher/table/remove">
+                                    <input type="text" value="<%= subject._id %>" hidden readonly name="idSubject">
+                                    <input type="text" value="<%= group._id %>" hidden readonly name="idGroup">
+                                    <input type="text" value="<%= item.type %>" hidden readonly name="type">
+                                    <input type="text" value="<%= item.numberOfLesson %>" hidden readonly
+                                           name="numberOfLesson">
+                                    <button type="submit">
+                                        <svg class="table-icon trash-icon" fill="#f54242"
+                                             xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                             viewBox="0 0 24 24">
+                                            <path d="M9 19c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5-17v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712zm-3 4v16h-14v-16h-2v18h18v-18h-2z"/>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                        </th>
+                    <% } %>
+                    </thead>
+                    <tbody>
+                    <% for(let i = 0; i < students.length; i++){%>
+                    <tr>
+                        <th><%=i+1%></th>
+                        <th><%=students[i].fullNameStudent%></th>
+                        <% for(let item of numbersAndType){%>
+                            <th>
+                                <div class="journal-table-td">
+                                    <% let mark = marks.find(el => el.type === item.type && el.numberOfLesson === item.numberOfLesson && el.idStudent.equals(students[i]._id)) %>
+                                    <input id="<%=mark._id %>" type="number" step="0.25" value="<%=mark.mark %>" onchange="changeData(this)">
+                                </div>
+                            </th>
+                        <% }%>
+                    </tr>
+                    <% }%>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="/script/teacherTable.js"></script>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+    </main>
+    <%- include('views-blocks/footer') %>
+</div>
+
+
+<div id="journal_addlesson_modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Додати нове заняття</h3>
+            <span class="close" id="lesson-close">&times;</span>
+        </div>
+        <form action="/teacher/table/addLesson" method="post">
+            <input type="text" value="<%=subject._id%>" hidden readonly name="idSubject">
+            <input type="text" value="<%=group._id%>" hidden readonly name="idGroup">
+            <div class="modal-body">
+                <div class="form__group field">
+                    <label for="numberOfLesson" class="form__label">Номер заняття</label>
+                    <input name="numberOfLesson" type="text" class="form__field" id="numberLesson" placeholder="">
+                </div>
+                <div class="form__group field">
+                    <label for="type" class="form__label">Вид заняття</label>
+                    <input name="type" type="text" class="form__field" id="typeLesson" placeholder="">
+                </div>
+            </div>
+            <button type="submit" class="blue_btn">Зберегти</button>
+        </form>
+    </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="/script/teacherTable.js"></script>
 </body>
+<script>
+    document.getElementById('login').innerText = 'Вихід';
+
+    let modaladdlesson = document.getElementById("journal_addlesson_modal");
+    let btnaddlesson = document.getElementById("lesson_btn");
+    let spansaddlesson = document.getElementById("lesson-close");
+    btnaddlesson.onclick = function () {
+        modaladdlesson.style.display = "flex";
+    }
+    spansaddlesson.onclick = function () {
+        modaladdlesson.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modaladdlesson) {
+            modaladdlesson.style.display = "none";
+        }
+    }
+</script>
 </html>

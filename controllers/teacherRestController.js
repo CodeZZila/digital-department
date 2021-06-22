@@ -53,6 +53,7 @@ exports.getTable = async function (req, res) {
             }
         }
     }
+    console.log(marks.length);
 
     let set = new Set();
     for await (let item of marks) {
@@ -65,6 +66,7 @@ exports.getTable = async function (req, res) {
     for await (let item of set){
         numbersAndType.push(JSON.parse(item));
     }
+    console.log(numbersAndType)
 
     //console.log(numbersAndType);
     //checker
