@@ -242,6 +242,7 @@ section, header, footer {
     -moz-transition: ease .3s;
     -ms-transition: ease .3s;
     -o-transition: ease .3s;
+    cursor: pointer;
     &:hover{
       opacity: 80%;
     }
@@ -325,7 +326,7 @@ section, header, footer {
     align-items: center;
     justify-content: center;
     transition: all .3s ease-in-out;
-        @include createButton(max-content, 2.5em, .5em,#fafafa,#ffffff, rgba(240, 240, 240, 0.381), #444444, .9em);
+        @include createButton(max-content, 2.5em, .3em,#fafafa,#ffffff, rgba(240, 240, 240, 0.22), #444444, .9em);
       
       &:hover{
         transform:translatey(1px);
@@ -334,6 +335,7 @@ section, header, footer {
         -moz-transform:translatey(1px);
         -ms-transform:translatey(1px);
         -o-transform:translatey(1px);
+        color: #2c2c2c;
       }
       &:active{
         opacity: 0.5;
@@ -354,7 +356,18 @@ section, header, footer {
     letter-spacing: .05em;
     transition: all .3s ease-in-out;
     @include createButton(max-content, 2.5em, .2em, #56ace9,#0396FF, rgba(30, 161, 255, 0.252), #fff, 1em);
-  
+
+    &:hover{
+      transform:translatey(1px);
+      box-shadow: none;
+      -webkit-transform:translatey(1px);
+      -moz-transform:translatey(1px);
+      -ms-transform:translatey(1px);
+      -o-transform:translatey(1px);
+    }
+    &:active{
+      opacity: 0.5;
+    }
   }
   
 .save-btn{
@@ -370,6 +383,17 @@ section, header, footer {
   transition: all .3s ease-in-out;
   @include createButton(100%, 2.5em, .2em, #56ace9,#0396FF, rgba(30,161,255,0.5), #fff, 1em);
 
+  &:hover{
+    transform:translatey(1px);
+    box-shadow: none;
+    -webkit-transform:translatey(1px);
+    -moz-transform:translatey(1px);
+    -ms-transform:translatey(1px);
+    -o-transform:translatey(1px);
+  }
+  &:active{
+    opacity: 0.5;
+  }
 }
 .trash-icon{
   cursor: pointer;
@@ -383,7 +407,23 @@ section, header, footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  @include createButton(100%,2em,.2em,#4889d8,#4889d8,#4889d8b4,#ffffff,1.2em);
+  @include createButton(100%,2em,.2em,#4889d8,#4889d8, rgba(72, 137, 216, 0.42),#ffffff,1.2em);
+
+  font-weight: 300;
+  padding-left:1em ;
+  padding-right:1em ;
+
+  &:hover{
+    transform:translatey(1px);
+    box-shadow: none;
+    -webkit-transform:translatey(1px);
+    -moz-transform:translatey(1px);
+    -ms-transform:translatey(1px);
+    -o-transform:translatey(1px);
+  }
+  &:active{
+    opacity: 0.5;
+  }
 }
 .modal {
   display: none;
@@ -405,6 +445,7 @@ section, header, footer {
     background-color: #fefefe;
     margin:  auto; /* 15% from the top and centered */
     padding: 1em;
+    border-radius: .3em;
     height: max-content;
     width: 30vw !important; /* Could be more or less, depending on screen size */
   }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/mainStyle.css">
+    <link rel="stylesheet" href="/style/teacher.css">
+    <link rel="stylesheet" href="/style/journal.css">
+    <link rel="shortcut icon" href="../img/icon.ico" type="image/x-icon">
+    <title>Digital Department</title>
+</head>
+<body>
+<div class="wrapper">
+    <%- include('views-blocks/header') %>
+    <main class="teacher-journal teacher-journal-groups">
+        <section class="journal-header">
+            <a href="" style="display: flex; align-items: center;"><svg style="margin-right: 1.5em; " width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"/></svg>
+                Олександр Власенко</a>
+        </section>
+        <section>
+            <div class="journal-body">
+                <h3>Доступні групи:</h3>
+                <div class="teacher-disciplines">
+                    <a class="discipline-block">
+                        <div class="discipline-block-content">
+                            <div class="content">
+                                <div class="title">281</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="discipline-block">
+                        <div class="discipline-block-content">
+                            <div class="content">
+                                <div class="title">281</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="discipline-block">
+                        <div class="discipline-block-content">
+                            <div class="content">
+                                <div class="title">281</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <%- include('views-blocks/footer') %>
+</div>
+
+
+
+</body>
+<script>
+    document.getElementById('login').innerText = 'Вихід';
+
+</script>
+</html>
