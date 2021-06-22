@@ -1,38 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/mainStyle.css">
+    <link rel="stylesheet" href="/style/teacher.css">
+    <link rel="stylesheet" href="/style/journal.css">
+    <link rel="shortcut icon" href="../img/icon.ico" type="image/x-icon">
+    <title>Digital Department</title>
 </head>
 <body>
-<h1><%= subject.fullname %> (<%= subject.abbreviation %>)</h1>
-<table>
-    <thead>
-        <tr>
-            <td>#</td>
-            <td>Група</td>
-            <td>Дія</td>
-        </tr>
-    </thead>
-    <tbody>
-    <% for(let i = 0; i < groups.length; i++){ %>
-    <tr>
-        <th>
-            <%= i+1 %>
-        </th>
-        <th>
-            <%= groups[i].nameGroup %>
-        </th>
-        <th>
-            <a href="/teacher/table?groupId=<%= groups[i]._id %>&subjectId=<%= subject._id %>">перейти</a>
-        </th>
-    </tr>
-    <% } %>
-    </tbody>
-</table>
+<div class="wrapper">
+    <%- include('views-blocks/header') %>
+    <main class="teacher-journal teacher-journal-groups">
+        <section class="journal-header">
+            <a href="/teacher/" style="display: flex; align-items: center;">
+                <svg style="margin-right: 1.5em; " width="24" height="24" xmlns="http://www.w3.org/2000/svg"
+                     fill-rule="evenodd" clip-rule="evenodd">
+                    <path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"/>
+                </svg>
+                <%= teacher.nameTeacher %> <%= teacher.surnameTeacher %> - <%= subject.fullname %>
+                (<%= subject.abbreviation %>)</a>
+        </section>
+        <section>
+            <div class="journal-body">
+                <h3>Доступні групи:</h3>
+                <div class="teacher-disciplines">
+                    <% for(let i = 0; i < groups.length; i++){ %>
+                        <a class="discipline-block" href="/teacher/table?groupId=<%= groups[i]._id %>&subjectId=<%= subject._id %>">
+                            <div class="discipline-block-content">
+                                <div class="content">
+                                    <div class="title"><%= groups[i].nameGroup %></div>
+                                </div>
+                            </div>
+                        </a>
+                    <% } %>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <%- include('views-blocks/footer') %>
+</div>
+
 
 </body>
+<script>
+    document.getElementById('login').innerText = 'Вихід';
+
+</script>
 </html>

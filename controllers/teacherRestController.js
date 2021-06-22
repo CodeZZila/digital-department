@@ -35,7 +35,8 @@ exports.getGroups = async function (req, res) {
     }
     res.render('teacherPageGroups', {
         groups: groupFromTeacherAndSubject,
-        subject: subject
+        subject: subject,
+        teacher: teacher
     });
 };
 
