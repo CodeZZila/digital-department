@@ -7,7 +7,7 @@
         </div>
         <hr>
         <div class="admin-body">
-            <table id="connections_table" class="admin-table">
+            <table id="connections_table" class="admin-table hover">
                 <thead>
                     <th>#</th>
                     <th>Дисципліна</th>
@@ -50,40 +50,43 @@
 
     
 <div id="connections_modal" class="modal">
-
     <div class="modal-content">
-      <span id="connections-close" class="close">&times;</span>
-      <div class="mb-3">
-        <label for="idSubject" class="form-label">Назва дисципліни</label>
-        <input class="form-control" name="status" list="datalistOptions_idSubject" id="idSubject" placeholder="Нажміть для пошуку...">
-        <datalist id="datalistOptions_idSubject">
-            <%for(let i = 0; i<subjects.length;i++){%>
-                <option data-id="<%=subjects[i]._id%>" value="<%=subjects[i].abbreviation%>">
-            <%}%>
-
-        </datalist>
-      </div>
-      <div class="mb-3">
-        <label for="idGroup" class="form-label">Номер групи</label>
-        <input class="form-control" list="datalistOptions_idGroup" id="idGroup" placeholder="Нажміть для пошуку...">
-        <datalist id="datalistOptions_idGroup">
-            <%for(let i = 0; i<groups.length;i++){%>
-                <option data-id="<%=groups[i]._id%>" value="<%=groups[i].nameGroup%>">
-                    <%}%>
-        </datalist>
-      </div>
-      <div class="mb-5">
-        <label for="idTeacher" class="form-label">Викладач</label>
-        <input class="form-control" list="datalistOptions_idTeacher" id="idTeacher" placeholder="Нажміть для пошуку...">
-        <datalist id="datalistOptions_idTeacher">
-            <%for(let i = 0; i<teachers.length;i++){%>
-                <option data-id="<%=teachers[i]._id%>" value="<%=teachers[i].surnameTeacher%>">
-                <%}%>
-<!--          <option value="Редзюк">-->
-<!--          <option value="Власенко">-->
-<!--          <option value="Фесьоха">-->
-        </datalist>
-      </div>
+        <div class="modal-header">
+            <h3>Додати зв'язок</h3>
+            <span class="close" id="connections-close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="form__group field">
+                <label for="idSubject" class="form__label">Назва дисципліни</label>
+                <input class="form__field" name="status" list="datalistOptions_idSubject" id="idSubject" placeholder="Нажміть для пошуку...">
+                <datalist id="datalistOptions_idSubject">
+                    <%for(let i = 0; i<subjects.length;i++){%>
+                    <option data-id="<%=subjects[i]._id%>" value="<%=subjects[i].abbreviation%>">
+                        <%}%>
+                </datalist>
+            </div>
+            <div class="form__group field">
+                <label for="idGroup" class="form__label">Номер групи</label>
+                <input class="form__field" list="datalistOptions_idGroup" id="idGroup" placeholder="Нажміть для пошуку...">
+                <datalist id="datalistOptions_idGroup">
+                    <%for(let i = 0; i<groups.length;i++){%>
+                    <option data-id="<%=groups[i]._id%>" value="<%=groups[i].nameGroup%>">
+                        <%}%>
+                </datalist>
+            </div>
+            <div class="form__group field">
+                <label for="idTeacher" class="form__label">Викладач</label>
+                <input class="form__field" list="datalistOptions_idTeacher" id="idTeacher" placeholder="Нажміть для пошуку...">
+                <datalist id="datalistOptions_idTeacher">
+                    <%for(let i = 0; i<teachers.length;i++){%>
+                    <option data-id="<%=teachers[i]._id%>" value="<%=teachers[i].surnameTeacher%>">
+                        <%}%>
+                        <!--          <option value="Редзюк">-->
+                        <!--          <option value="Власенко">-->
+                        <!--          <option value="Фесьоха">-->
+                </datalist>
+            </div>
+        </div>
       <button class="blue_btn" onclick="addRelation()">Зберегти</button>
 
     </div>

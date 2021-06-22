@@ -95,6 +95,9 @@
 table {
   width: 100% !important;
 }
+table td {
+  text-align: center;
+}
 
 .paginate_button.current {
   background: rgba(243, 243, 243, 0.61) !important;
@@ -102,6 +105,7 @@ table {
 
 .paginate_button:hover {
   background: rgba(224, 224, 224, 0.34) !important;
+  color: #2c2c2c;
 }
 
 .plus_btn {

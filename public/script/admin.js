@@ -13,11 +13,12 @@ $(document).ready(function () {
                 "previous": "Попередня",
                 "next": "Наступна"
             }
-        },
+        } ,
+        'autoWidth': false,
         "columns": [
             { "width": "1em"},
             { "width": "40%"},
-            null,
+            { "width": "50%"},
             { "width": "1.1em"},
             { "width": "1.1em"}
         ]
@@ -40,9 +41,9 @@ $(document).ready(function () {
                 "next": "Наступна"
             }
         },
+        'autoWidth': false,
         "columns": [
             { "width": "1em"},
-            null,
             null,
             { "width": "1.1em"},
             { "width": "1.1em"}
@@ -66,6 +67,7 @@ $(document).ready(function () {
                 "next": "Наступна"
             }
         },
+        'autoWidth': false,
         "columns": [
             { "width": "1em"},
             null,
@@ -93,11 +95,12 @@ $(document).ready(function () {
                 "next": "Наступна"
             }
         },
+        'autoWidth': false,
         "columns": [
             { "width": "1em"},
             { "width": "20%"},
             null,
-            { "width": "1.1em"},
+            null,
             { "width": "1.1em"}
         ]
     });
