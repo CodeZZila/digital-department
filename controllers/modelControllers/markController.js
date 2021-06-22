@@ -30,6 +30,14 @@ exports.findByIdSubjectAndIdStudent = async function (idSubject, idStudent) {
     return Mark.find({idStudent: idStudent, idStudent: idStudent});
 };
 
+exports.deleteBySubject = async function(idSubject){
+    return Mark.deleteMany({idSubject:idSubject})
+}
+
+exports.deleteByStudent= async function(idStudent){
+    return Mark.deleteMany({idStudent:idStudent})
+}
+
 exports.findByIdAndUpdateMark = async function (id, value) {
     let mark = await Mark.findById(id);
     mark.mark = value;

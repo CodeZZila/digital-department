@@ -11,8 +11,11 @@ exports.create = async function (object) {
 };
 
 exports.deleteById = async function (id) {
+
     await Group.findByIdAndDelete(id, exception);
 };
+
+
 
 exports.update = async function (id, object) {
     await Group.findByIdAndUpdate(id, object ,exception);
