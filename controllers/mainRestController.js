@@ -1,4 +1,4 @@
 exports.getAll = function (req,res){
-    res.render('main');
+    res.render('teacher-groups');
 };
 
