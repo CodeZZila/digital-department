@@ -13,6 +13,10 @@ exports.create = async function (object) {
 exports.deleteById = async function (id) {
     await Student.findByIdAndDelete(id, exception);
 };
+exports.deleteByGroup = async function (idGroup) {
+    await Student.deleteMany({idGroup:idGroup})
+};
+
 
 exports.update = async function (id, object) {
     await Student.findByIdAndUpdate(id, object ,exception);

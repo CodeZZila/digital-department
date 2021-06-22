@@ -14,6 +14,10 @@ exports.deleteById = async function (id) {
     await Relation.findByIdAndDelete(id, exception);
 };
 
+exports.deleteBySubject = async function (idSubject) {
+    await Relation.deleteMany({idSubject})
+};
+
 exports.update = async function (id, object) {
     await Relation.findByIdAndUpdate(id, object ,exception);
 };
@@ -37,3 +41,11 @@ exports.findAllByIdGroup = async function (idGroup) {
 exports.findAllByIdSubjectAndIdTeacher = async function (idSubject, idTeacher) {
     return Relation.find({idSubject: idSubject, idTeacher: idTeacher});
 };
+
+exports.deleteByGroup = async function(idGroup){
+    return Relation.deleteMany({idGroup:idGroup})
+}
+
+exports.deleteByTeacher = async function(idTeacher){
+    return Relation.deleteMany({idTeacher:idTeacher})
+}

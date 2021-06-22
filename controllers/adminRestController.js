@@ -3,6 +3,7 @@ const groupController = require('./modelControllers/groupController');
 const teacherController = require('./modelControllers/teacherController');
 const relationController = require('./modelControllers/relationController');
 const studentController = require('./modelControllers/studentController');
+const markController = require('./modelControllers/markController');
 const userController = require('./modelControllers/userController');
 const sendEmail = require('../config/sendEmail')
 const bcrypt = require('bcrypt');
@@ -31,7 +32,6 @@ exports.getAll =  function (req, res) {
 }
 
 exports.addSubject = async function(req,res){
-    console.log(req.body)
     res.send (subjectController.create(req.body));
 }
 
@@ -43,18 +43,32 @@ exports.getSubject = function all(req, res){
 
 exports.deleteSubject = async function(req,res){
     console.log(req.params.id)
+    await markController.deleteBySubject(req.params.id);
+    await relationController.deleteBySubject(req.params.id)
     res.send(subjectController.deleteById(req.params.id));
 }
 
 exports.addGroup = function (req, res) {
-    console.log(req.body)
 
     res.send (groupController.create(req.body));
 }
 
-exports.deleteGroup = function(req,res){
-    console.log(req.params.id)
-    res.send (groupController.deleteById(req.params.id));
+exports.getGroup = function all(req, res){
+    groupController.findAll().then(group=>{
+        res.send(group)
+    })
+}
+
+
+//TODO:  Проверить правильность работы
+exports.deleteGroup = async function (req, res) {
+    console.log(req.params.id);
+    let students;
+    students = await studentController.findByIdGroup(req.params.id);
+    students.forEach(element => markController.deleteByStudent(element._id));
+    await studentController.deleteByGroup(req.params.id);
+    await relationController.deleteByGroup(req.params.id);
+    res.send(groupController.deleteById(req.params.id));
 }
 
 
@@ -73,7 +87,6 @@ function translite(str) {
 }
 
 exports.addTeacher = async function (req, res) {
-    console.log(req.body);
     let name = req.body.nameTeacher;
     let surname =req.body.surnameTeacher;
     let email = req.body.email;
@@ -89,10 +102,22 @@ exports.addTeacher = async function (req, res) {
     await userController.create(user);
     await teacherController.create(teacher);
 
+    res.send('OK!');
 }
 
-exports.deleteTeacher = function(req,res){
+exports.getTeacher =  function all(req, res){
+    teacherController.findAll().then(teacher=>{
+        res.send(teacher)
+    })
+}
+
+//FIXME
+exports.deleteTeacher =async function(req,res){
     console.log(req.params.id);
+    let teacher;
+    teacher = await teacherController.findById(req.params.id);
+    await userController.deleteById(teacher.userId);
+    await relationController.deleteByTeacher(req.params.id);
     res.send (teacherController.deleteById(req.params.id));
 }
 
@@ -129,7 +154,7 @@ exports.addCadets = async function (req, res) {
         console.log('file deleted successfully');
 
     });
-    // res.send('OK');
+    res.send('OK');
 }
 
 
