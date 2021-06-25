@@ -1,6 +1,6 @@
 const Teacher = require('../../models/Teacher');
 
-function exception (err) {
+function exception(err) {
     if (err) return "error 400";
     return `ok`;
 }
@@ -15,8 +15,18 @@ exports.deleteById = async function (id) {
 };
 
 exports.update = async function (id, object) {
-    await Teacher.findByIdAndUpdate(id, object ,exception);
+    await Teacher.findByIdAndUpdate(id, object, exception);
 };
+
+exports.updateName = async function (teacher, newName) {
+    let teacherNew = await Teacher.findOneAndUpdate({userId: teacher.userId}, {nameTeacher: newName}, {new: true})
+    return teacherNew
+}
+
+exports.updateSurname = async function (teacher, newSurname) {
+    let teacherNew = await Teacher.findOneAndUpdate({userId: teacher.userId}, {surnameTeacher: newSurname}, {new: true})
+    return teacherNew
+}
 
 exports.findAll = async function () {
     return Teacher.find({});

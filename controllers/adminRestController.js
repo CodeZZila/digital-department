@@ -13,16 +13,16 @@ const mongoose = require('mongoose');
 
 const fs = require('fs')
 
-exports.getAll =  function (req, res) {
+exports.getAll = function (req, res) {
     groupController.findAll().then(groups => {
-        subjectController.findAll().then(subjects=>{
-            teacherController.findAll().then(teachers=>{
-                relationController.findAll().then(relations=>{
-                    res.render('admin',{
-                        subjects:subjects,
-                        groups:groups,
-                        teachers:teachers,
-                        relations:relations
+        subjectController.findAll().then(subjects => {
+            teacherController.findAll().then(teachers => {
+                relationController.findAll().then(relations => {
+                    res.render('admin', {
+                        subjects: subjects,
+                        groups: groups,
+                        teachers: teachers,
+                        relations: relations
 
                     })
                 })
@@ -31,17 +31,17 @@ exports.getAll =  function (req, res) {
     })
 }
 
-exports.addSubject = async function(req,res){
-    res.send (subjectController.create(req.body));
+exports.addSubject = async function (req, res) {
+    res.send(subjectController.create(req.body));
 }
 
-exports.getSubject = function all(req, res){
-    subjectController.findAll().then(subjects=>{
+exports.getSubject = function all(req, res) {
+    subjectController.findAll().then(subjects => {
         res.send(subjects)
     })
 }
 
-exports.deleteSubject = async function(req,res){
+exports.deleteSubject = async function (req, res) {
     console.log(req.params.id)
     await markController.deleteBySubject(req.params.id);
     await relationController.deleteBySubject(req.params.id)
@@ -50,11 +50,11 @@ exports.deleteSubject = async function(req,res){
 
 exports.addGroup = function (req, res) {
 
-    res.send (groupController.create(req.body));
+    res.send(groupController.create(req.body));
 }
 
-exports.getGroup = function all(req, res){
-    groupController.findAll().then(group=>{
+exports.getGroup = function all(req, res) {
+    groupController.findAll().then(group => {
         res.send(group)
     })
 }
@@ -77,27 +77,35 @@ function translite(str) {
     const en = ("A-a-B-b-V-v-G-g-G-g-D-d-E-e-E-e-E-e-J-j-Z-z-I-i-I-i-I-i-Y-y-K-k-L-l-M-m-N-n-O-o-P-p-R-r-S-s-T-t-U-u-F-f-H-h-Ts-ts-Ch-ch-Sh-sh-SCH-sch---Y-y---E-e-YU-yu-YA-ya").split("-");
     let res = '';
     let i = 0, l = str.length;
-    for(; i<l; i++)
-    {
+    for (; i < l; i++) {
         const s = str.charAt(i), n = ru.indexOf(s);
-        if(n >= 0) { res += en[n]; }
-        else { res += s; }
+        if (n >= 0) {
+            res += en[n];
+        } else {
+            res += s;
+        }
     }
     return res;
 }
 
 exports.addTeacher = async function (req, res) {
     let name = req.body.nameTeacher;
-    let surname =req.body.surnameTeacher;
+    let surname = req.body.surnameTeacher;
     let email = req.body.email;
     let id = mongoose.Types.ObjectId();
-    let login=translite(surname).replace(/\s/g, '').toLowerCase()+translite(name).replace(/\s/g, '').toLowerCase();
-    let password=translite(surname).replace(/\s/g, '')+Math.round(99 + Math.random() * (999 - 99));
+    let login = translite(surname).replace(/\s/g, '').toLowerCase() + translite(name).replace(/\s/g, '').toLowerCase();
+    let password = translite(surname).replace(/\s/g, '') + Math.round(99 + Math.random() * (999 - 99));
 
-    let user = {_id:id, username:login, password:bcrypt.hashSync(password, salt), role:'TEACHER', email:email}
-    let teacher = {nameTeacher:name,surnameTeacher:surname, userId:id}
+    let user = {
+        _id: id,
+        username: login,
+        password: bcrypt.hashSync(password, salt),
+        role: 'TEACHER',
+        email: email
+    }
+    let teacher = {nameTeacher: name, surnameTeacher: surname, userId: id}
 
-    await sendEmail.send(email, name,surname,login, password);
+    await sendEmail.send(email, name, surname, login, password);
 
     await userController.create(user);
     await teacherController.create(teacher);
@@ -105,39 +113,39 @@ exports.addTeacher = async function (req, res) {
     res.send('OK!');
 }
 
-exports.getTeacher =  function all(req, res){
-    teacherController.findAll().then(teacher=>{
+exports.getTeacher = function all(req, res) {
+    teacherController.findAll().then(teacher => {
         res.send(teacher)
     })
 }
 
 //FIXME
-exports.deleteTeacher =async function(req,res){
+exports.deleteTeacher = async function (req, res) {
     console.log(req.params.id);
     let teacher;
     teacher = await teacherController.findById(req.params.id);
     await userController.deleteById(teacher.userId);
     await relationController.deleteByTeacher(req.params.id);
-    res.send (teacherController.deleteById(req.params.id));
+    res.send(teacherController.deleteById(req.params.id));
 }
 
 exports.addRelation = function (req, res) {
-    res.send (relationController.create(req.body));
+    res.send(relationController.create(req.body));
 }
 
-exports.deleteRelation = function(req,res){
+exports.deleteRelation = function (req, res) {
     console.log(req.params.id)
-    res.send (relationController.deleteById(req.params.id));
+    res.send(relationController.deleteById(req.params.id));
 }
 
 exports.addCadets = async function (req, res) {
     let nameGroup = req.file.originalname.split('.')[0]
-    if(!(await groupController.isExist(nameGroup))){
+    if (!(await groupController.isExist(nameGroup))) {
         await groupController.create({
             nameGroup: nameGroup
         })
     }
-    fs.readFile('./uploads/'+req.file.originalname, "utf8", async function (error, data) {
+    fs.readFile('./uploads/' + req.file.originalname, "utf8", async function (error, data) {
         if (error) throw error;
 
         let group = await groupController.findByName(nameGroup)
@@ -149,8 +157,8 @@ exports.addCadets = async function (req, res) {
             })
         }
     });
-    fs.unlink('./uploads/'+req.file.originalname,function(err){
-        if(err) return console.log(err);
+    fs.unlink('./uploads/' + req.file.originalname, function (err) {
+        if (err) return console.log(err);
         console.log('file deleted successfully');
 
     });

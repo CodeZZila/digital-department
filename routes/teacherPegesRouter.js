@@ -5,6 +5,7 @@ const teacherRouter = express.Router();
 const roleMiddleware = require('../middleware/roleMiddleware');
 
 teacherRouter.get('/', roleMiddleware(['TEACHER']), teacherRestController.getStartView)
+teacherRouter.post('/save', roleMiddleware(['TEACHER']), teacherRestController.save)
 teacherRouter.get('/groups', roleMiddleware(['TEACHER']), teacherRestController.getGroups)
 teacherRouter.get('/table', roleMiddleware(['TEACHER']), teacherRestController.getTable)
 teacherRouter.post('/table/addLesson', roleMiddleware(['TEACHER']), teacherRestController.postAddLesson)

@@ -3,23 +3,41 @@ const subjectController = require('./modelControllers/subjectController');
 const groupController = require('./modelControllers/groupController');
 const studentController = require('./modelControllers/studentController');
 const relationController = require('./modelControllers/relationController');
+const userController = require('./modelControllers/userController');
 const markController = require('./modelControllers/markController');
 
 const jwt = require('jsonwebtoken');
 const {secret} = require('../config/config-jwt');
 const sec = require('../controllers/authController');
 
+const bcrypt = require('bcrypt');
+const salt = bcrypt.genSaltSync(10);
+
+
 exports.getStartView = async function (req, res) {
     let teacher = (await teacherController.findByIdUser(jwt.verify(sec.tok, secret).id))[0];
+    let user = await userController.findById(teacher.userId);
 
     let relationsFromTeacher = await relationController.findAllByIdTeacher(teacher._id);
-    let subjectFromTeacher = [];
+    // let subjectFromTeacher = [];
+    // for await (let item of relationsFromTeacher) {
+    //     subjectFromTeacher.push(await subjectController.findById(item.idSubject));
+    // }
+    let subjectFromTeacher = new Map();
     for await (let item of relationsFromTeacher) {
-        subjectFromTeacher.push(await subjectController.findById(item.idSubject));
+        let arrGroups = [];
+
+        let relations = await relationController.findAllByIdSubjectAndIdTeacher(item.idSubject, teacher._id);
+        for await (let item of relations) {
+            arrGroups.push((await groupController.findById(item.idGroup)).nameGroup);
+        }
+
+        subjectFromTeacher.set(await subjectController.findById(item.idSubject), arrGroups);
     }
 
     res.render('teacherPageStart', {
         teacher: teacher,
+        email: user.email,
         subjects: subjectFromTeacher
     });
 };
@@ -54,7 +72,6 @@ exports.getTable = async function (req, res) {
             }
         }
     }
-    console.log(marks.length);
 
     let set = new Set();
     for await (let item of marks) {
@@ -67,10 +84,6 @@ exports.getTable = async function (req, res) {
     for await (let item of set){
         numbersAndType.push(JSON.parse(item));
     }
-    console.log(numbersAndType)
-
-    //console.log(numbersAndType);
-    //checker
 
     res.render('teacherPageTable', {
         teacher: teacher,
@@ -123,4 +136,31 @@ exports.postRemoveLesson = async function (req, res) {
 exports.postSaveMark = async function (req, res) {
     await markController.findByIdAndUpdateMark(req.body.idMark, req.body.newValue)
     res.send('ok');
+};
+
+exports.save = async function(req, res){
+    let teacher = (await teacherController.findByIdUser(jwt.verify(sec.tok, secret).id))[0];
+    let user = await userController.findById(teacher.userId);
+
+    if(req.body.name !== teacher.nameTeacher && req.body.name !== ''){
+        teacher = await teacherController.updateName(teacher, req.body.name);
+    }
+
+    if(req.body.surname !== teacher.surnameTeacher && req.body.surname !== ''){
+        teacher = await teacherController.updateSurname(teacher, req.body.surname);
+    }
+
+    if(req.body.email !== user.email && req.body.email !== ''){
+        user = await userController.updateEmail(user, req.body.email);
+    }
+
+    if(req.body.pass !== ''){
+        let newPassBcrypt = bcrypt.hashSync(req.body.pass, salt);
+        user = await userController.updatePassword(user, newPassBcrypt);
+    }
+
+    res.send({
+        teacher: teacher,
+        email: user.email
+    });
 };
