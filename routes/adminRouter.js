@@ -35,6 +35,4 @@ adminRouter.delete('/teacher/:id',urlencodedParser, adminRestController.deleteTe
 adminRouter.post('/addRelation',urlencodedParser, adminRestController.addRelation);
 
 
-
-
 module.exports=adminRouter;

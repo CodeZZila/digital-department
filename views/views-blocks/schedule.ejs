@@ -11,11 +11,12 @@
             </tr>
         </thead>
         <tbody>
+        <% for (let i = 0; i < audiences.length; i++){ %>
             <tr>
-                <th><div>228A</div></th>
+                <th><div><%= audiences[i] %></div></th>
                 <td>
-                    <form class="form" id="form__1">
-                        <div  class="schedule-block l rounded shadow-sm">
+                    <form class="form" id="form_<%= audiences[i] %>_1">
+                        <div  class="schedule-block rounded shadow-sm">
                             <div class="first">
                                 <p class="text-group">222</p>
                             </div>
@@ -28,8 +29,8 @@
                     </form>
                 </td>
                 <td>
-                    <form id="form__2">
-                        <div class="schedule-block l rounded shadow-sm">
+                    <form id="form_<%= audiences[i] %>_2">
+                        <div class="schedule-block rounded shadow-sm">
                             <div class="first">
                                 <p class="text-group">222</p>
                             </div>
@@ -41,8 +42,8 @@
                     </form>
                 </td>
                 <td>
-                    <form id="form__3">
-                        <div class="schedule-block pz rounded shadow-sm">
+                    <form id="form_<%= audiences[i] %>_3">
+                        <div class="schedule-block rounded shadow-sm">
                             <div class="first">
                                 <p class="text-group"></p>
                             </div>
@@ -54,8 +55,8 @@
                     </form>
                 </td>
                 <td>
-                    <form id="form__4">
-                        <div class="schedule-block gz rounded shadow-sm">
+                    <form id="form_<%= audiences[i] %>_4">
+                        <div class="schedule-block rounded shadow-sm">
                             <div class="first">
                                 <p class="text-group"></p>
                             </div>
@@ -67,286 +68,7 @@
                     </form>
                 </td>
             </tr>
-            <tr>
-                <th><div>226</div></th>
-                <td>
-                    <form class="form" id="form__1">
-                        <div  class="schedule-block gz rounded shadow-sm">
-                            <div class="first">
-                                <p class="text-group">222</p>
-                            </div>
-                            
-                            <div class="second">
-                                <p class="discipline">222</p>
-                                <p class="teacher">222</p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-                <td>
-                    <form id="form__2">
-                        <div class="schedule-block l rounded shadow-sm">
-                            <div class="first">
-                                <p class="text-group">222</p>
-                            </div>
-                            <div class="second">
-                                <p class="discipline">222</p>
-                                <p class="teacher">222</p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-                <td>
-                    <form id="form__3">
-                        <div class="schedule-block pz rounded shadow-sm">
-                            <div class="first">
-                                <p class="text-group"></p>
-                            </div>
-                            <div class="second">
-                                <p class="discipline"></p>
-                                <p class="teacher"></p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-                <td>
-                    <form id="form__4">
-                        <div class="schedule-block gz rounded shadow-sm">
-                            <div class="first">
-                                <p class="text-group"></p>
-                            </div>
-                            <div class="second">
-                                <p class="discipline"></p>
-                                <p class="teacher"></p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <th><div>224</div></th>
-                <td>
-                    <form class="form" id="form__1">
-                        <div  class="schedule-block pz rounded shadow-sm">
-                            <div class="first">
-                                <p class="text-group">222</p>
-                            </div>
-                            
-                            <div class="second">
-                                <p class="discipline">222</p>
-                                <p class="teacher">222</p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-                <td>
-                    <form id="form__2">
-                        <div class="schedule-block gz gray rounded shadow-sm">
-                            <div class="first">
-                                <p class="text-group">222</p>
-                            </div>
-                            <div class="second">
-                                <p class="discipline">222</p>
-                                <p class="teacher">222</p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-                <td>
-                    <form id="form__3">
-                        <div class="schedule-block l gray rounded shadow-sm">
-                            <div class="first">
-                                <p class="text-group"></p>
-                            </div>
-                            <div class="second">
-                                <p class="discipline"></p>
-                                <p class="teacher"></p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-                <td>
-                    <form id="form__4">
-                        <div class="schedule-block pz rounded shadow-sm">
-                            <div class="first">
-                                <p class="text-group"></p>
-                            </div>
-                            <div class="second">
-                                <p class="discipline"></p>
-                                <p class="teacher"></p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <th><div>223</div></th>
-                <td>
-                    <form class="form" id="form__1">
-                        <div  class="schedule-block gz rounded shadow-sm">
-                            <div class="first">
-                                <p class="text-group">222</p>
-                            </div>
-                            
-                            <div class="second">
-                                <p class="discipline">222</p>
-                                <p class="teacher">222</p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-                <td>
-                    <form id="form__2">
-                        <div class="schedule-block pz rounded shadow-sm">
-                            <div class="first">
-                                <p class="text-group">222</p>
-                            </div>
-                            <div class="second">
-                                <p class="discipline">222</p>
-                                <p class="teacher">222</p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-                <td>
-                    <form id="form__3">
-                        <div class="schedule-block gz rounded shadow-sm">
-                            <div class="first">
-                                <p class="text-group"></p>
-                            </div>
-                            <div class="second">
-                                <p class="discipline"></p>
-                                <p class="teacher"></p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-                <td>
-                    <form id="form__4">
-                        <div class="schedule-block pz rounded shadow-sm">
-                            <div class="first">
-                                <p class="text-group"></p>
-                            </div>
-                            <div class="second">
-                                <p class="discipline"></p>
-                                <p class="teacher"></p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <th><div>219</div></th>
-                <td>
-                    <form class="form" id="form__1">
-                        <div  class="schedule-block pz rounded shadow-sm">
-                            <div class="first">
-                                <p class="text-group">222</p>
-                            </div>
-                            
-                            <div class="second">
-                                <p class="discipline">222</p>
-                                <p class="teacher">222</p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-                <td>
-                    <form id="form__2">
-                        <div class="schedule-block l rounded shadow-sm">
-                            <div class="first">
-                                <p class="text-group">222</p>
-                            </div>
-                            <div class="second">
-                                <p class="discipline">222</p>
-                                <p class="teacher">222</p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-                <td>
-                    <form id="form__3">
-                        <div class="schedule-block gz rounded shadow-sm">
-                            <div class="first">
-                                <p class="text-group"></p>
-                            </div>
-                            <div class="second">
-                                <p class="discipline"></p>
-                                <p class="teacher"></p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-                <td>
-                    <form id="form__4">
-                        <div class="schedule-block pz rounded shadow-sm">
-                            <div class="first">
-                                <p class="text-group"></p>
-                            </div>
-                            <div class="second">
-                                <p class="discipline"></p>
-                                <p class="teacher"></p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <th><div>228A</div></th>
-                <td>
-                    <form class="form" id="form__1">
-                        <div  class="schedule-block pz rounded shadow-sm">
-                            <div class="first">
-                                <p class="text-group">222</p>
-                            </div>
-                            
-                            <div class="second">
-                                <p class="discipline">222</p>
-                                <p class="teacher">222</p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-                <td>
-                    <form id="form__2">
-                        <div class="schedule-block l rounded shadow-sm">
-                            <div class="first">
-                                <p class="text-group">222</p>
-                            </div>
-                            <div class="second">
-                                <p class="discipline">222</p>
-                                <p class="teacher">222</p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-                <td>
-                    <form id="form__3">
-                        <div class="schedule-block gz rounded shadow-sm">
-                            <div class="first">
-                                <p class="text-group"></p>
-                            </div>
-                            <div class="second">
-                                <p class="discipline"></p>
-                                <p class="teacher"></p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-                <td>
-                    <form id="form__4">
-                        <div class="schedule-block pz rounded shadow-sm">
-                            <div class="first">
-                                <p class="text-group"></p>
-                            </div>
-                            <div class="second">
-                                <p class="discipline"></p>
-                                <p class="teacher"></p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-            </tr>
+        <% } %>
         </tbody>
     </table>
 </div>
@@ -362,7 +84,7 @@
             hours = time.getHours(),
             minutes = time.getMinutes();
 
-        $.get("/admin/scheduleAdmin/allAudiences", function (auds) {
+        $.get("/schedule/allAudiences", function (auds) {
             $.each(auds, function (k, v) {
                 for (let j = 1; j <= 4; j++){
 

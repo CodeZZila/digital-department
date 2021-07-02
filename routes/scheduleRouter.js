@@ -6,8 +6,12 @@ const urlencodedParser = bodyParser.urlencoded({extended: true});
 const scheduleRouter = express.Router();
 
 scheduleRouter.get('/', scheduleRestController.getSchedule);
-scheduleRouter.get('/edit', scheduleRestController.editSchedule)
+scheduleRouter.get('/edit', scheduleRestController.editSchedule);
 
+// РОЗКЛАД
+scheduleRouter.get('/allAudiences', scheduleRestController.allAudiences);
+scheduleRouter.post('/saveAll', scheduleRestController.saveAll);
+scheduleRouter.post('/getData', scheduleRestController.getData);
 
 
 module.exports = scheduleRouter;

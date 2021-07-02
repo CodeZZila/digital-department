@@ -49,7 +49,6 @@ exports.deleteSubject = async function (req, res) {
 }
 
 exports.addGroup = function (req, res) {
-
     res.send(groupController.create(req.body));
 }
 
