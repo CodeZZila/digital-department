@@ -76,8 +76,7 @@ function translite(str) {
     const ru = ("А-а-Б-б-В-в-Ґ-ґ-Г-г-Д-д-Е-е-Ё-ё-Є-є-Ж-ж-З-з-И-и-І-і-Ї-ї-Й-й-К-к-Л-л-М-м-Н-н-О-о-П-п-Р-р-С-с-Т-т-У-у-Ф-ф-Х-х-Ц-ц-Ч-ч-Ш-ш-Щ-щ-Ъ-ъ-Ы-ы-Ь-ь-Э-э-Ю-ю-Я-я").split("-");
     const en = ("A-a-B-b-V-v-G-g-G-g-D-d-E-e-E-e-E-e-J-j-Z-z-I-i-I-i-I-i-Y-y-K-k-L-l-M-m-N-n-O-o-P-p-R-r-S-s-T-t-U-u-F-f-H-h-Ts-ts-Ch-ch-Sh-sh-SCH-sch---Y-y---E-e-YU-yu-YA-ya").split("-");
     let res = '';
-    let i = 0, l = str.length;
-    for(; i<l; i++)
+    for(let i=0;str.length; i++)
     {
         const s = str.charAt(i), n = ru.indexOf(s);
         if(n >= 0) { res += en[n]; }
@@ -91,6 +90,7 @@ exports.addTeacher = async function (req, res) {
     let surname =req.body.surnameTeacher;
     let email = req.body.email;
     let id = mongoose.Types.ObjectId();
+
     let login=translite(surname).replace(/\s/g, '').toLowerCase()+translite(name).replace(/\s/g, '').toLowerCase();
     let password=translite(surname).replace(/\s/g, '')+Math.round(99 + Math.random() * (999 - 99));
 
@@ -125,10 +125,48 @@ exports.addRelation = function (req, res) {
     res.send (relationController.create(req.body));
 }
 
+exports.getRelation = function (req, res) {
+    relationController.findAll().then(relation=>{
+        subjectController.findAll().then(subject=>{
+            teacherController.findAll().then(teacher=>{
+                groupController.findAll().then(group=>{
+
+                    let last =[];
+
+                    for (let i =0; i< relation.length; i++){
+                        let id=relation[i]._id;
+                        let s;
+                        let t;
+                        let g;
+                        for (let j=0; j< subject.length; j++){
+                            if (relation[i].idSubject.toString()===subject[j]._id.toString()){
+                                s = subject[j].abbreviation;
+                            }
+                        }
+                        for (let j=0; j< teacher.length; j++){
+                            if (relation[i].idTeacher.toString()===teacher[j]._id.toString()){
+                                t = teacher[j].surnameTeacher
+                            }
+                        }
+                        for (let j=0; j< group.length; j++){
+                            if (relation[i].idGroup.toString()===group[j]._id.toString()){
+                                g = group[j].nameGroup;
+                            }
+                        }
+                        last.push({id:id,subject:s, teacher:t, group:g })
+                    }
+                    res.send(last);
+                })
+            })
+        })
+
+    })}
+
 exports.deleteRelation = function(req,res){
     console.log(req.params.id)
     res.send (relationController.deleteById(req.params.id));
 }
+
 
 exports.addCadets = async function (req, res) {
     let nameGroup = req.file.originalname.split('.')[0]
@@ -157,4 +195,14 @@ exports.addCadets = async function (req, res) {
     res.send('OK');
 }
 
+exports.getEditGroup = async function(req, res){
+    console.log(req.params.id)
+
+    studentController.findByIdGroup(req.params.id).then(students=>{
+        res.render('editGroup-admin',{
+            students:students
+        })
+    })
+
+}
 

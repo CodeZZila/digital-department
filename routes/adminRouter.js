@@ -33,6 +33,10 @@ adminRouter.post('/addTeacher',urlencodedParser, adminRestController.addTeacher)
 adminRouter.get('/getTeacher', adminRestController.getTeacher)
 adminRouter.delete('/teacher/:id',urlencodedParser, adminRestController.deleteTeacher);
 adminRouter.post('/addRelation',urlencodedParser, adminRestController.addRelation);
+adminRouter.get('/getRelation', adminRestController.getRelation);
+adminRouter.delete('/relation/:id', urlencodedParser, adminRestController.deleteRelation)
+
+adminRouter.get('/group/:id', adminRestController.getEditGroup)
 
 
 
