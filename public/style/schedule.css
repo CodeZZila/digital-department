@@ -22,10 +22,8 @@
   background: white;
 }
 .schedule .schedule-block {
-  min-width: 20em;
   width: 100%;
-  min-height: 130px;
-  height: 100%;
+  border-radius: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,6 +43,7 @@
   line-height: 1em;
   text-align: center;
   color: rgba(255, 255, 255, 0.915);
+  padding-left: 0.2em;
 }
 .schedule .schedule-block .second {
   -ms-flex-item-align: center;
@@ -77,6 +76,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+.schedule .schedule-block .spinner-border {
+  width: 1em;
+  height: 1em;
 }
 .schedule .schedule-block-admin {
   background-color: #EBEBEB;
@@ -169,7 +172,6 @@
 }
 .schedule .schedule-table {
   padding: 0 3em;
-  height: 93vh;
 }
 .schedule .schedule-table table {
   width: 100%;
@@ -193,15 +195,9 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
-.schedule .schedule-table .first {
-  width: 100%;
-}
 .schedule .schedule-table .second {
   padding: 0.1em;
   width: 100%;
-}
-.schedule .schedule-table th {
-  font-size: 6vh;
 }
 .schedule .schedule-table tbody th > div {
   min-height: 130px;
@@ -227,6 +223,9 @@
 .schedule .schedule-title .form-select {
   margin-left: 20px;
   width: 150px;
+}
+.schedule .date-form {
+  width: 70%;
 }
 
 .footer {
@@ -257,20 +256,21 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 0.5em 1em;
 }
 .footer .submit-button .loading {
   display: none;
 }
+.footer .submit-button button {
+  margin: 0 0.2em;
+}
 
-@media (min-width: 2199.98px) {
-  .schedule-title {
-    height: 6vh;
-  }
-  .schedule-title h2, .schedule-title select, .schedule-title button, .schedule-title svg {
-    height: 100%;
-    font-size: 3vh;
-  }
-  .schedule-title .form-select {
-    width: 15vw !important;
-  }
+.watch-schedule .schedule-title {
+  margin: 2em 0 1em 0;
+}
+.watch-schedule .schedule-table {
+  padding: 0;
+}
+.watch-schedule th {
+  font-size: 1.5em;
 }

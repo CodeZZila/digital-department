@@ -28,14 +28,15 @@ function changeData(date){
                 $.get("/schedule/allAudiences", function (auds) {
                     $.each(auds, function (k, v) {
                         for (let j = 1; j <= 4; j++){
-                            let form = $('#form_' + v + '_' + j);form.children(".rounded").removeClass("pz");
-                            form.children(".rounded").removeClass("gz");
-                            form.children(".rounded").removeClass("l");
-                            form.children(".rounded").addClass("free");
+                            let form = $('#form_' + v + '_' + j);
+                            form.children(".schedule-block").removeClass("pz");
+                            form.children(".schedule-block").removeClass("gz");
+                            form.children(".schedule-block").removeClass("l");
+                            form.children(".schedule-block").addClass("free");
 
-                            form.children(".rounded").children(".first").children(".text-group").text('');
-                            form.children(".rounded").children(".second").children(".discipline").text('Вільна аудиторія');
-                            form.children('.rounded').children(".second").children('.teacher').text('');
+                            form.children(".schedule-block").children(".first").children(".text-group").style.display = "none";
+                            form.children(".schedule-block").children(".second").children(".discipline").text('Вільна аудиторія');
+                            form.children('.schedule-block').children(".second").children('.teacher').style.display = "none";
                         }
                     });
                 });
@@ -44,32 +45,32 @@ function changeData(date){
                     $.each(auds, function (k, v) {
                         for (let j = 1; j <= 4; j++){
                             let form = $('#form_' + v + '_' + j);
-                            form.children(".rounded").removeClass("pz");
-                            form.children(".rounded").removeClass("gz");
-                            form.children(".rounded").removeClass("l");
-                            form.children(".rounded").addClass("free");
+                            form.children(".schedule-block").removeClass("pz");
+                            form.children(".schedule-block").removeClass("gz");
+                            form.children(".schedule-block").removeClass("l");
+                            form.children(".schedule-block").addClass("free");
 
-                            form.children(".rounded").children(".first").children(".text-group").text('');
-                            form.children(".rounded").children(".second").children(".discipline").text('Вільна аудиторія');
-                            form.children('.rounded').children(".second").children('.teacher').text('');
+                            form.children(".schedule-block").children(".first").children(".text-group").text('');
+                            form.children(".schedule-block").children(".second").children(".discipline").text('Вільна аудиторія');
+                            form.children('.schedule-block').children(".second").children('.teacher').text('');
                         }
                     });
 
                     $.each(data, function (key, value) {
                         let form = $('#form_' + value.audience + '_' + value.numberLesson);
 
-                        form.children(".rounded").removeClass("free");
+                        form.children(".schedule-block").removeClass("free");
                         if(value.type === 'гз'){
-                            form.children(".rounded").addClass("gz");
+                            form.children(".schedule-block").addClass("gz");
                         }else if(value.type === 'пз'){
-                            form.children(".rounded").addClass("pz");
+                            form.children(".schedule-block").addClass("pz");
                         }else if(value.type === 'л' || value.type === 'ср'){
-                            form.children(".rounded").addClass("l");
+                            form.children(".schedule-block").addClass("l");
                         }
 
-                        form.children(".rounded").children(".first").children(".text-group").text(value.group);
-                        form.children(".rounded").children(".second").children(".discipline").text(value.title);
-                        form.children('.rounded').children(".second").children('.teacher').text(value.teacher);
+                        form.children(".schedule-block").children(".first").children(".text-group").text(value.group);
+                        form.children(".schedule-block").children(".second").children(".discipline").text(value.title);
+                        form.children('.schedule-block').children(".second").children('.teacher').text(value.teacher);
                     });
                 });
             }
