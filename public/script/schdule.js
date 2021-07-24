@@ -1,6 +1,6 @@
 $(document).ready(function (){
     document.getElementById("dateSave").valueAsDate = new Date();
-    changeData($('#dateSave').val());
+    changeData(document.getElementById("dateSave").valueAsDate.toISOString().split('T')[0]);
 });
 
 $(window).load(function () {
@@ -15,7 +15,7 @@ $(document).ajaxStart(function () {
 
 function saveEvent(){
     let date = new Date($('#dateSave').val());
-    console.log(date);
+    console.log(date.toISOString().split('T')[0]);
     $.get("/schedule/allAudiences", function (data) {
         let arr = [];
         $.each(data, function (k, v) {
@@ -33,7 +33,7 @@ function saveEvent(){
                     continue;
                 }else{
                     arr.push({
-                        date: date,
+                        date: date.toISOString().split('T')[0],
                         title:title,
                         numberLesson: numberLesson,
                         teacher: teacher,
@@ -49,7 +49,7 @@ function saveEvent(){
             url: '/schedule/saveAll',           /* Куда пойдет запрос */
             method: 'post',             /* Метод передачи (post или get) */
             dataType: 'json',          /* Тип данных в ответе (xml, json, script, html). */
-            data: {arr: arr, date: date},          /* Параметры передаваемые в запросе. */
+            data: {arr: arr, date: date.toISOString().split('T')[0]},          /* Параметры передаваемые в запросе. */
             success: function(info){   /* функция которая будет выполнена после успешного запроса.  */
                 console.log(info);
             }
