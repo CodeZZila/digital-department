@@ -1,76 +1,86 @@
 <div class="schedule-table ">
-    <table class=" p-0">
-        <thead>
-            <tr>
-                <th></th>
-                <th>1 пара</th>
-                <th>2 пара</th>
-                <th>3 пара</th>
-                <th>4 пара</th>
-                <th style="display:none">5 пара</th>
-            </tr>
-        </thead>
-        <tbody>
+
+    <div class="grid">
+        <div class="th-text"></div>
+        <div class="th-text">1 пара</div>
+        <div class="th-text">2 пара</div>
+        <div class="th-text">3 пара</div>
+        <div class="th-text">4 пара</div>
+    </div>
+    <div class="schedule-grid">
+
         <% for (let i = 0; i < audiences.length; i++){ %>
-            <tr>
-                <th><div><%= audiences[i] %></div></th>
-                <td>
-                    <form class="form" id="form_<%= audiences[i] %>_1">
-                        <div  class="schedule-block shadow-sm">
-                            <div class="first">
-                                <p class="text-group">222</p>
-                            </div>
-                            
-                            <div class="second">
-                                <p class="discipline">222</p>
-                                <p class="teacher">222</p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-                <td>
-                    <form id="form_<%= audiences[i] %>_2">
-                        <div class="schedule-block shadow-sm">
-                            <div class="first">
-                                <p class="text-group">222</p>
-                            </div>
-                            <div class="second">
-                                <p class="discipline">222</p>
-                                <p class="teacher">222</p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-                <td>
-                    <form id="form_<%= audiences[i] %>_3">
-                        <div class="schedule-block shadow-sm">
-                            <div class="first">
-                                <p class="text-group"></p>
-                            </div>
-                            <div class="second">
-                                <p class="discipline"></p>
-                                <p class="teacher"></p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-                <td>
-                    <form id="form_<%= audiences[i] %>_4">
-                        <div class="schedule-block shadow-sm">
-                            <div class="first">
-                                <p class="text-group"></p>
-                            </div>
-                            <div class="second">
-                                <p class="discipline"></p>
-                                <p class="teacher"></p>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-            </tr>
+
+            <div class="th-text"><%= audiences[i] %></div>
+            <form class="form" id="form_<%= audiences[i] %>_1">
+                <div  class="schedule-block  shadow-sm">
+                    <div class="first">
+                        <p class="text-group">222</p>
+                    </div>
+                    
+                    <div class="second">
+                        <p class="discipline">222</p>
+                        <p class="teacher">222</p>
+                    </div>
+                </div>
+            </form>
+    
+            <form id="form_<%= audiences[i] %>_2">
+                <div class="schedule-block  shadow-sm">
+                    <div class="first">
+                        <p class="text-group">222</p>
+                    </div>
+                    <div class="second">
+                        <p class="discipline">222</p>
+                        <p class="teacher">222</p>
+                    </div>
+                </div>
+            </form>
+    
+            <form id="form_<%= audiences[i] %>_3">
+                <div class="schedule-block  shadow-sm">
+                    <div class="first">
+                        <p class="text-group">222</p>
+                    </div>
+                    <div class="second">
+                        <p class="discipline">222</p>
+                        <p class="teacher">222</p>
+                    </div>
+                </div>
+            </form>
+    
+            <form id="form_<%= audiences[i] %>_4">
+                <div class="schedule-block  shadow-sm">
+                    <div class="first">
+                        <p class="text-group">222</p>
+                    </div>
+                    <div class="second">
+                        <p class="discipline">222</p>
+                        <p class="teacher">2222</p>
+                    </div>
+                </div>
+            </form>
+    
+    
+    
         <% } %>
-        </tbody>
-    </table>
+
+
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 <script>
     let a = document.querySelectorAll('tr>td');

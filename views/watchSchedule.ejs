@@ -24,8 +24,12 @@
                     <option value="2">післязавтра</option>
                 </select>
                 <button class="btn" onclick="fullscreenFunc()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 10.999v-10.999h-11l3.379 3.379-14.379 14.378v-15.757h9v-2h-11v24h24v-11h-2v9h-15.758l14.379-14.379 3.379 3.378z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 0v10.999l-3.379-3.378-4.379 4.379-4.242-4.242 4.379-4.379-3.379-3.379h11zm-11.875 16.138l-4.242-4.242-4.504 4.483-3.379-3.378v10.999h11l-3.379-3.379 4.504-4.483z"/></svg>
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 10.999v-10.999h-11l3.379 3.379-14.379 14.378v-15.757h9v-2h-11v24h24v-11h-2v9h-15.758l14.379-14.379 3.379 3.378z"/></svg> -->
                 </button>
+                <button class="btn" >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9 12l-4.463 4.969-4.537-4.969h3c0-4.97 4.03-9 9-9 2.395 0 4.565.942 6.179 2.468l-2.004 2.231c-1.081-1.05-2.553-1.699-4.175-1.699-3.309 0-6 2.691-6 6h3zm10.463-4.969l-4.463 4.969h3c0 3.309-2.691 6-6 6-1.623 0-3.094-.65-4.175-1.699l-2.004 2.231c1.613 1.526 3.784 2.468 6.179 2.468 4.97 0 9-4.03 9-9h3l-4.537-4.969z"/></svg>
+              </button>
             </section>
             <div class="schedule ms-2">
                 <div class="schedule-container" id="schedule-container">
@@ -51,7 +55,6 @@
                       </div>
                     </div>
                     <%- include('views-blocks/schedule.ejs') %>
-                    
                 </div>
             </div>
         </main>

@@ -17,6 +17,7 @@
 .schedule .gray {
   filter: grayscale(100);
   -webkit-filter: grayscale(100);
+  color: black;
 }
 .schedule .schedule-container {
   background: white;
@@ -54,7 +55,7 @@
   font-weight: bold;
   font-size: 39px;
   line-height: 1em;
-  font-size: 5vh;
+  font-size: 4vh;
   font-style: normal;
   text-align: center;
   color: #FFFFFF;
@@ -273,4 +274,38 @@
 }
 .watch-schedule th {
   font-size: 1.5em;
+}
+
+.schedule-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1em 7fr 1em 7fr 1em 7fr 1em 7fr;
+  grid-template-columns: 1fr 7fr 7fr 7fr 7fr;
+  gap: 1em;
+  padding: 1em;
+  min-height: 90vh;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 0.2em 7fr 0.2em 7fr 0.2em 7fr 0.2em 7fr;
+  grid-template-columns: 1fr 7fr 7fr 7fr 7fr;
+  gap: 0.2em;
+  padding: 0 1em;
+}
+
+.th-text {
+  text-align: center;
+  font-size: 3.5vh;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }

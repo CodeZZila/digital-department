@@ -28,15 +28,14 @@ function changeData(date){
                 $.get("/schedule/allAudiences", function (auds) {
                     $.each(auds, function (k, v) {
                         for (let j = 1; j <= 4; j++){
-                            let form = $('#form_' + v + '_' + j);
-                            form.children(".schedule-block").removeClass("pz");
+                            let form = $('#form_' + v + '_' + j);form.children(".schedule-block").removeClass("pz");
                             form.children(".schedule-block").removeClass("gz");
                             form.children(".schedule-block").removeClass("l");
                             form.children(".schedule-block").addClass("free");
 
-                            form.children(".schedule-block").children(".first").children(".text-group").style.display = "none";
+                            form.children(".schedule-block").children(".first").children(".text-group").text('');
                             form.children(".schedule-block").children(".second").children(".discipline").text('Вільна аудиторія');
-                            form.children('.schedule-block').children(".second").children('.teacher').style.display = "none";
+                            form.children('.schedule-block').children(".second").children('.teacher').text('');
                         }
                     });
                 });

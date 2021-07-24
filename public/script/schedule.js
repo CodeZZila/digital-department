@@ -37,9 +37,8 @@ function updateTime () {
   if (lastMinutes !== nowMinutes) {
     updateContainer(minutesContainer, nowMinutes)
   }
-  
-  
   last = now
+  
 }
 
 function tick () {
