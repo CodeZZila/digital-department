@@ -25,18 +25,7 @@ exports.saveAll = async function(req, res){
 }
 
 exports.getData = async function(req, res){
-    //return Shark.find({date: req.body.date})
-
-    Shark.find({}, function (err, data) {
-        if (err) return res.send(500, err);
-
-        let output = data.filter(x =>{
-            if(x.date === req.body.date){
-                return true;
-            }
-        });
-        res.send(output);
-    });
+    res.send(await Shark.find({date: req.body.date}))
 }
 
 exports.editSchedule = function (req, res) {
