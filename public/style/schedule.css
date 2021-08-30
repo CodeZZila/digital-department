@@ -33,6 +33,7 @@
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  max-width: 20vw;
 }
 .schedule .schedule-block p {
   margin: 0;
@@ -40,7 +41,7 @@
 .schedule .schedule-block .text-group {
   font-weight: 900;
   font-size: 60px;
-  font-size: 10vh;
+  font-size: 8vh;
   line-height: 1em;
   text-align: center;
   color: rgba(255, 255, 255, 0.915);
@@ -100,9 +101,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   font-weight: 400;
   color: #989898;
   height: 5vh;
@@ -282,8 +283,8 @@
   -ms-grid-columns: 1fr 1em 7fr 1em 7fr 1em 7fr 1em 7fr;
   grid-template-columns: 1fr 7fr 7fr 7fr 7fr;
   gap: 1em;
-  padding: 1em;
-  min-height: 90vh;
+  padding: 1em 2em;
+  height: 90vh;
 }
 
 .grid {

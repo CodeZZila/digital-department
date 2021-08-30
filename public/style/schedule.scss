@@ -37,13 +37,14 @@ $lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
     display: flex;
     align-items: center;
     justify-content: space-around;
+    max-width: 20vw;
     p{
         margin: 0;
     }
     .text-group{
         font-weight: 900;
         font-size: 60px;
-        font-size: 10vh;
+        font-size: 8vh;
         line-height: 1em;
         text-align: center;
         color: rgba(255, 255, 255, 0.915);
@@ -92,7 +93,7 @@ $lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
     display: flex;
     width: 100%;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     font-weight: 400;
     color: rgb(152, 152, 152);
     height: 5vh;
@@ -308,7 +309,7 @@ $lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
       grid-template-columns: 1fr 7fr 7fr 7fr 7fr;
       gap: 1em;
       padding: 1em 2em;
-      min-height: 90vh;
+      height: 90vh;
   }
   .grid{
       
