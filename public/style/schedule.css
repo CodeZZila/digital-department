@@ -290,7 +290,7 @@
 
 .th-text {
   text-align: center;
-  font-size: 3.5vh;
+  font-size: 3.3vh;
   font-weight: 700;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -313,6 +313,7 @@
   margin: -0.7em 0;
 }
 .grid .th-text {
+  font-size: 3.5vh;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;

@@ -317,7 +317,7 @@ $lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
   
   .th-text{
     text-align: center;
-    font-size: 3.5vh;
+    font-size: 3.3vh;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -333,6 +333,7 @@ $lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
   padding: 0 1em ;
   margin: -.7em 0;
   .th-text {
+    font-size: 3.5vh;
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
