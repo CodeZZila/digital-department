@@ -37,8 +37,8 @@ $lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
     display: flex;
     align-items: center;
     justify-content: space-around;
-  width: 20vw !important;
-  height: 9vh;
+  width: 21vw !important;
+  height: 11vh;
   //max-height: ;
     p{
         margin: 0;
@@ -87,10 +87,10 @@ $lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
 .schedule-block-admin{
     background-color: $platinum-color;
     //margin: 40px;
-    width: 20em;
+    width: 2em;
     height: max-content;
     display: flex;
-  height: 10vh;
+  //height: 10vh;
 }
 .time{
     display: flex;
@@ -310,8 +310,8 @@ $lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
   .schedule-grid{
       display: grid;
       grid-template-columns: 1fr 7fr 7fr 7fr 7fr;
-      gap: 1em;
-      padding: 1em 2em;
+      gap: .7em;
+      padding: 1em 0;
       height: 90vh;
   }
   
@@ -322,17 +322,22 @@ $lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .grid{
 
   display: grid;
-  grid-template-columns: 1fr 3fr 3fr 3fr 3fr;
+  grid-template-columns: 1fr 7fr 7fr 7fr 7fr;
   gap: .2em;
   padding: 0 1em ;
+  margin: -.7em 0;
   .th-text {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
-    padding-right: 4em;
+     padding-left: 1.5em;
+    width: 100%;
   }
 
 }
