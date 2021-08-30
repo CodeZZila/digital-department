@@ -24,7 +24,7 @@
 }
 .schedule .schedule-block {
   width: 100%;
-  border-radius: 15px;
+  border-radius: 7px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -33,7 +33,7 @@
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 21vw !important;
+  width: 21.5vw !important;
   height: 11vh;
 }
 .schedule .schedule-block p {

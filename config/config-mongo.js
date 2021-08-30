@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27020/digital-department', {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('mongodb+srv://kirast:adczsx123@cluster0.xaanr.mongodb.net/digital-department', {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => {
         console.log('connection to database established');
     }).catch(err => {
