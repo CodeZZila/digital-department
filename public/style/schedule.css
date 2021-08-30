@@ -33,7 +33,8 @@
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  max-width: 20vw;
+  width: 20vw !important;
+  height: 9vh;
 }
 .schedule .schedule-block p {
   margin: 0;
@@ -92,6 +93,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 10vh;
 }
 .schedule .time {
   display: -webkit-box;
@@ -105,7 +107,7 @@
       -ms-flex-pack: end;
           justify-content: flex-end;
   font-weight: 400;
-  color: #989898;
+  color: black;
   height: 5vh;
   padding-bottom: 1em;
   font-weight: 500;
@@ -287,15 +289,6 @@
   height: 90vh;
 }
 
-.grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 0.2em 7fr 0.2em 7fr 0.2em 7fr 0.2em 7fr;
-  grid-template-columns: 1fr 7fr 7fr 7fr 7fr;
-  gap: 0.2em;
-  padding: 0 1em;
-}
-
 .th-text {
   text-align: center;
   font-size: 3.5vh;
@@ -309,4 +302,19 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 0.2em 3fr 0.2em 3fr 0.2em 3fr 0.2em 3fr;
+  grid-template-columns: 1fr 3fr 3fr 3fr 3fr;
+  gap: 0.2em;
+  padding: 0 1em;
+}
+.grid .th-text {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-right: 4em;
 }
