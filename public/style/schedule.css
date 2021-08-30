@@ -42,7 +42,7 @@
 .schedule .schedule-block .text-group {
   font-weight: 900;
   font-size: 60px;
-  font-size: 7vh;
+  font-size: 6vh;
   line-height: 1em;
   text-align: center;
   color: rgba(255, 255, 255, 0.915);
@@ -290,7 +290,7 @@
 
 .th-text {
   text-align: center;
-  font-size: 3.3vh;
+  font-size: 3.5vh;
   font-weight: 700;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -313,7 +313,6 @@
   margin: -0.7em 0;
 }
 .grid .th-text {
-  font-size: 3.5vh;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
